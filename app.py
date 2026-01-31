@@ -72,15 +72,34 @@ st.markdown("""
         z-index: 1;
     }
     
+    /* Fix for text truncation in markdown */
+    .stMarkdown {
+        overflow: visible !important;
+        width: 100% !important;
+    }
+    
+    .stMarkdown > div {
+        overflow: visible !important;
+        width: 100% !important;
+    }
+    
+    [data-testid="stMarkdownContainer"] {
+        overflow: visible !important;
+        width: 100% !important;
+    }
+    
     /* Typography System */
     h1, h2, h3, h4, h5, h6 {
         font-family: 'Sora', sans-serif !important;
         font-weight: 700 !important;
         color: var(--text-primary) !important;
         line-height: 1.2 !important;
+        overflow: visible !important;
+        display: block !important;
+        width: 100% !important;
     }
     
-    /* FIXED H1 - with fallback color for better compatibility */
+    /* FIXED H1 - with fallback color and proper display */
     h1 {
         font-size: 3.75rem !important;
         font-weight: 800 !important;
@@ -91,6 +110,11 @@ st.markdown("""
         background-clip: text;
         margin-bottom: 1rem !important;
         animation: fadeInUp 0.8s ease-out;
+        display: block !important;
+        width: 100% !important;
+        overflow: visible !important;
+        white-space: normal !important;
+        word-wrap: break-word !important;
     }
     
     /* Fallback for browsers that don't support background-clip: text */
@@ -841,7 +865,17 @@ if st.session_state.page == "Home":
     col1, col2 = st.columns([2, 1])
 
     with col1:
-        st.markdown("# Dheeraj Muley")
+        # Using HTML for better rendering consistency across platforms
+        st.markdown("""
+        <h1 style='font-size: 3.75rem; font-weight: 800; color: #60a5fa; 
+                   margin-bottom: 1rem; display: block; width: 100%; 
+                   background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%);
+                   -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
+                   background-clip: text; overflow: visible;'>
+        Dheeraj Muley
+        </h1>
+        """, unsafe_allow_html=True)
+
         st.markdown(
             "### AI/ML Engineering Student | Building Intelligent Solutions")
 
