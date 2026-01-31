@@ -12,7 +12,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS - Ultra Professional Design
+# Custom CSS - Ultra Professional Design with Fixed Gradients
 st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap');
@@ -80,15 +80,26 @@ st.markdown("""
         line-height: 1.2 !important;
     }
     
+    /* FIXED H1 - with fallback color for better compatibility */
     h1 {
         font-size: 3.75rem !important;
         font-weight: 800 !important;
+        color: #60a5fa !important;  /* Fallback color - bright blue */
         background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
         margin-bottom: 1rem !important;
         animation: fadeInUp 0.8s ease-out;
+    }
+    
+    /* Fallback for browsers that don't support background-clip: text */
+    @supports not (background-clip: text) or not (-webkit-background-clip: text) {
+        h1 {
+            color: #60a5fa !important;
+            background: none !important;
+            -webkit-text-fill-color: #60a5fa !important;
+        }
     }
     
     h2 {
@@ -216,7 +227,7 @@ st.markdown("""
         box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4) !important;
     }
     
-    /* Metric Cards with Glassmorphism */
+    /* Metric Cards with Glassmorphism - FIXED with fallback */
     [data-testid="stMetric"] {
         background: linear-gradient(135deg, rgba(17, 24, 39, 0.8), rgba(31, 41, 55, 0.6));
         backdrop-filter: blur(10px);
@@ -232,13 +243,23 @@ st.markdown("""
         border-color: var(--primary);
     }
     
+    /* FIXED Metric Value - with fallback */
     [data-testid="stMetricValue"] {
         font-size: 2.75rem !important;
         font-weight: 800 !important;
+        color: #60a5fa !important;  /* Fallback color */
         background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
+    }
+    
+    @supports not (background-clip: text) or not (-webkit-background-clip: text) {
+        [data-testid="stMetricValue"] {
+            color: #60a5fa !important;
+            background: none !important;
+            -webkit-text-fill-color: #60a5fa !important;
+        }
     }
     
     [data-testid="stMetricLabel"] {
