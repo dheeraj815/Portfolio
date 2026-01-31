@@ -99,9 +99,9 @@ st.markdown("""
         width: 100% !important;
     }
     
-    /* FIXED H1 - with fallback color and proper display */
+    /* FIXED H1 - with fallback color and LARGE size */
     h1 {
-        font-size: 3.75rem !important;
+        font-size: 4.5rem !important;
         font-weight: 800 !important;
         color: #60a5fa !important;  /* Fallback color - bright blue */
         background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%);
@@ -115,6 +115,20 @@ st.markdown("""
         overflow: visible !important;
         white-space: normal !important;
         word-wrap: break-word !important;
+        line-height: 1.1 !important;
+    }
+    
+    /* Responsive h1 sizing */
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 2.5rem !important;
+        }
+    }
+    
+    @media (min-width: 769px) and (max-width: 1024px) {
+        h1 {
+            font-size: 3.5rem !important;
+        }
     }
     
     /* Fallback for browsers that don't support background-clip: text */
@@ -865,13 +879,15 @@ if st.session_state.page == "Home":
     col1, col2 = st.columns([2, 1])
 
     with col1:
-        # Using HTML for better rendering consistency across platforms
+        # Using HTML for better rendering consistency - with EXTRA LARGE font size
         st.markdown("""
-        <h1 style='font-size: 3.75rem; font-weight: 800; color: #60a5fa; 
-                   margin-bottom: 1rem; display: block; width: 100%; 
+        <h1 style='font-size: 4.5rem !important; font-weight: 800 !important; 
+                   color: #60a5fa !important; line-height: 1.1 !important;
+                   margin-bottom: 1rem !important; display: block !important; 
+                   width: 100% !important; overflow: visible !important;
                    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%);
                    -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
-                   background-clip: text; overflow: visible;'>
+                   background-clip: text; font-family: "Sora", sans-serif !important;'>
         Dheeraj Muley
         </h1>
         """, unsafe_allow_html=True)
