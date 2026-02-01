@@ -12,7 +12,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS - Ultra Professional Design with Fixed Gradients
+# Custom CSS - Ultra Professional Design with Medium-Sized Headings
 st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap');
@@ -88,22 +88,22 @@ st.markdown("""
         width: 100% !important;
     }
     
-    /* Typography System */
+    /* Typography System - MEDIUM SIZES */
     h1, h2, h3, h4, h5, h6 {
         font-family: 'Sora', sans-serif !important;
         font-weight: 700 !important;
         color: var(--text-primary) !important;
-        line-height: 1.2 !important;
+        line-height: 1.3 !important;
         overflow: visible !important;
         display: block !important;
         width: 100% !important;
     }
     
-    /* FIXED H1 - with fallback color and LARGE size */
+    /* H1 - Medium size (2.5rem instead of 4.5rem) */
     h1 {
-        font-size: 4.5rem !important;
-        font-weight: 800 !important;
-        color: #60a5fa !important;  /* Fallback color - bright blue */
+        font-size: 2.5rem !important;
+        font-weight: 700 !important;
+        color: #60a5fa !important;
         background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -115,19 +115,19 @@ st.markdown("""
         overflow: visible !important;
         white-space: normal !important;
         word-wrap: break-word !important;
-        line-height: 1.1 !important;
+        line-height: 1.2 !important;
     }
     
     /* Responsive h1 sizing */
     @media (max-width: 768px) {
         h1 {
-            font-size: 2.5rem !important;
+            font-size: 2rem !important;
         }
     }
     
     @media (min-width: 769px) and (max-width: 1024px) {
         h1 {
-            font-size: 3.5rem !important;
+            font-size: 2.25rem !important;
         }
     }
     
@@ -140,10 +140,11 @@ st.markdown("""
         }
     }
     
+    /* H2 - Medium size (1.75rem instead of 2.25rem) */
     h2 {
-        font-size: 2.25rem !important;
-        margin: 3.5rem 0 1.5rem 0 !important;
-        padding-bottom: 1rem !important;
+        font-size: 1.75rem !important;
+        margin: 2.5rem 0 1.25rem 0 !important;
+        padding-bottom: 0.75rem !important;
         border-bottom: 2px solid var(--primary);
         position: relative;
         animation: fadeInUp 0.6s ease-out;
@@ -154,23 +155,24 @@ st.markdown("""
         position: absolute;
         bottom: -2px;
         left: 0;
-        width: 100px;
+        width: 80px;
         height: 2px;
         background: linear-gradient(90deg, var(--secondary), var(--accent));
         box-shadow: 0 0 10px var(--secondary);
     }
     
+    /* H3 - Medium size (1.25rem instead of 1.5rem) */
     h3 {
-        font-size: 1.5rem !important;
+        font-size: 1.25rem !important;
         color: var(--accent) !important;
-        margin: 2rem 0 1rem 0 !important;
+        margin: 1.5rem 0 0.875rem 0 !important;
         font-weight: 600 !important;
     }
     
     p, li, span {
         color: var(--text-secondary) !important;
-        font-size: 1.0625rem !important;
-        line-height: 1.75 !important;
+        font-size: 1rem !important;
+        line-height: 1.7 !important;
         font-weight: 400 !important;
     }
     
@@ -185,18 +187,18 @@ st.markdown("""
         padding: 0.25rem 0.5rem !important;
         border-radius: 0.375rem !important;
         font-family: 'Fira Code', monospace !important;
-        font-size: 0.9375rem !important;
+        font-size: 0.9rem !important;
         border: 1px solid rgba(37, 99, 235, 0.3);
     }
     
     /* Enhanced Lists */
     ul, ol {
-        margin: 1.25rem 0 1.75rem 1.5rem !important;
+        margin: 1rem 0 1.5rem 1.5rem !important;
         padding-left: 0.5rem !important;
     }
     
     li {
-        margin-bottom: 0.875rem !important;
+        margin-bottom: 0.75rem !important;
         padding-left: 0.75rem !important;
         position: relative;
     }
@@ -207,7 +209,7 @@ st.markdown("""
         left: -1rem;
         color: var(--primary);
         font-weight: bold;
-        font-size: 1.25rem;
+        font-size: 1.15rem;
     }
     
     /* Professional Card System */
@@ -216,8 +218,8 @@ st.markdown("""
         border: 1px solid var(--border) !important;
         border-left: 3px solid var(--primary) !important;
         border-radius: 0.75rem !important;
-        padding: 1.75rem !important;
-        margin: 1.5rem 0 !important;
+        padding: 1.5rem !important;
+        margin: 1.25rem 0 !important;
         backdrop-filter: blur(12px);
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -236,9 +238,9 @@ st.markdown("""
         color: white !important;
         border: none !important;
         border-radius: 0.5rem !important;
-        padding: 0.875rem 2rem !important;
+        padding: 0.75rem 1.75rem !important;
         font-weight: 600 !important;
-        font-size: 1rem !important;
+        font-size: 0.95rem !important;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
         box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3) !important;
         position: relative;
@@ -265,13 +267,13 @@ st.markdown("""
         box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4) !important;
     }
     
-    /* Metric Cards with Glassmorphism - FIXED with fallback */
+    /* Metric Cards with Glassmorphism */
     [data-testid="stMetric"] {
         background: linear-gradient(135deg, rgba(17, 24, 39, 0.8), rgba(31, 41, 55, 0.6));
         backdrop-filter: blur(10px);
         border: 1px solid var(--border);
         border-radius: 0.75rem;
-        padding: 1.5rem;
+        padding: 1.25rem;
         transition: all 0.3s ease;
     }
     
@@ -281,11 +283,11 @@ st.markdown("""
         border-color: var(--primary);
     }
     
-    /* FIXED Metric Value - with fallback */
+    /* Metric Value - Medium size */
     [data-testid="stMetricValue"] {
-        font-size: 2.75rem !important;
-        font-weight: 800 !important;
-        color: #60a5fa !important;  /* Fallback color */
+        font-size: 2rem !important;
+        font-weight: 700 !important;
+        color: #60a5fa !important;
         background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -302,7 +304,7 @@ st.markdown("""
     
     [data-testid="stMetricLabel"] {
         color: var(--text-muted) !important;
-        font-size: 0.9375rem !important;
+        font-size: 0.875rem !important;
         font-weight: 600 !important;
         text-transform: uppercase;
         letter-spacing: 0.05em;
@@ -310,7 +312,7 @@ st.markdown("""
     
     [data-testid="stMetricDelta"] {
         color: var(--success) !important;
-        font-size: 0.875rem !important;
+        font-size: 0.8rem !important;
     }
     
     /* Elegant Sidebar */
@@ -327,19 +329,19 @@ st.markdown("""
     .stRadio > label {
         color: var(--text-primary) !important;
         font-weight: 700 !important;
-        font-size: 1.125rem !important;
-        margin-bottom: 1.25rem !important;
+        font-size: 1.05rem !important;
+        margin-bottom: 1rem !important;
         text-transform: uppercase;
         letter-spacing: 0.05em;
     }
     
     .stRadio > div {
-        gap: 0.625rem !important;
+        gap: 0.5rem !important;
     }
     
     .stRadio > div > label {
         background: rgba(17, 24, 39, 0.6) !important;
-        padding: 0.875rem 1.5rem !important;
+        padding: 0.75rem 1.25rem !important;
         border-radius: 0.5rem !important;
         border: 1px solid var(--border) !important;
         color: var(--text-secondary) !important;
@@ -393,7 +395,7 @@ st.markdown("""
         border: 1px solid var(--border) !important;
         color: var(--text-primary) !important;
         font-weight: 600 !important;
-        padding: 1.25rem 1.5rem !important;
+        padding: 1rem 1.25rem !important;
         transition: all 0.3s ease !important;
     }
     
@@ -408,7 +410,7 @@ st.markdown("""
         border: 1px solid var(--border);
         border-top: none;
         border-radius: 0 0 0.75rem 0.75rem;
-        padding: 1.5rem;
+        padding: 1.25rem;
     }
     
     /* Enhanced Links */
@@ -441,10 +443,10 @@ st.markdown("""
     
     /* Tab Styling */
     .stTabs [data-baseweb="tab-list"] {
-        gap: 0.75rem;
+        gap: 0.625rem;
         background: rgba(17, 24, 39, 0.6);
         border-radius: 0.75rem;
-        padding: 0.625rem;
+        padding: 0.5rem;
         border: 1px solid var(--border);
     }
     
@@ -453,7 +455,7 @@ st.markdown("""
         border-radius: 0.5rem !important;
         color: var(--text-secondary) !important;
         font-weight: 600 !important;
-        padding: 0.875rem 1.75rem !important;
+        padding: 0.75rem 1.5rem !important;
         transition: all 0.3s ease !important;
     }
     
@@ -472,12 +474,12 @@ st.markdown("""
     .badge {
         display: inline-flex;
         align-items: center;
-        padding: 0.4rem 0.875rem;
+        padding: 0.35rem 0.75rem;
         background: rgba(37, 99, 235, 0.15);
         border: 1px solid rgba(37, 99, 235, 0.3);
         border-radius: 0.5rem;
         color: #93c5fd !important;
-        font-size: 0.875rem !important;
+        font-size: 0.85rem !important;
         font-weight: 600 !important;
         margin: 0.25rem;
         transition: all 0.3s ease;
@@ -591,7 +593,7 @@ st.markdown("""
         border: none;
         height: 1px;
         background: linear-gradient(90deg, transparent, var(--border), transparent);
-        margin: 2.5rem 0;
+        margin: 2rem 0;
     }
     
     /* Plotly Chart Styling */
@@ -846,7 +848,7 @@ with st.sidebar:
 
     st.markdown(f"""
     <div style='text-align: center; padding: 1.5rem 0;'>
-        <h3 style='color: var(--text-primary); margin-bottom: 0.5rem;'>Dheeraj Muley</h3>
+        <h3 style='color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.25rem !important;'>Dheeraj Muley</h3>
         <p style='color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;'>
             AI/ML Engineering Student
         </p>
@@ -879,19 +881,7 @@ if st.session_state.page == "Home":
     col1, col2 = st.columns([2, 1])
 
     with col1:
-        # Using HTML for better rendering consistency - with EXTRA LARGE font size
-        st.markdown("""
-        <h1 style='font-size: 4.5rem !important; font-weight: 800 !important; 
-                   color: #60a5fa !important; line-height: 1.1 !important;
-                   margin-bottom: 1rem !important; display: block !important; 
-                   width: 100% !important; overflow: visible !important;
-                   background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%);
-                   -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
-                   background-clip: text; font-family: "Sora", sans-serif !important;'>
-        Dheeraj Muley
-        </h1>
-        """, unsafe_allow_html=True)
-
+        st.markdown("# Dheeraj Muley")
         st.markdown(
             "### AI/ML Engineering Student | Building Intelligent Solutions")
 
@@ -924,7 +914,7 @@ if st.session_state.page == "Home":
     with col2:
         st.markdown("""
         <div style='padding: 2rem; background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(124, 58, 237, 0.1)); border-radius: 1rem; border: 1px solid var(--border);'>
-            <h4 style='color: var(--text-primary); margin-bottom: 1rem;'>🎯 Quick Stats</h4>
+            <h4 style='color: var(--text-primary); margin-bottom: 1rem; font-size: 1.15rem !important;'>🎯 Quick Stats</h4>
             <div style='line-height: 2;'>
                 <strong style='color: var(--accent);'>50+</strong> Projects Completed<br>
                 <strong style='color: var(--accent);'>30+</strong> Technologies<br>
@@ -1714,7 +1704,7 @@ elif st.session_state.page == "Education":
     with col2:
         st.markdown("""
         <div style='padding: 1.5rem; background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(124, 58, 237, 0.15)); border-radius: 0.75rem; border: 1px solid var(--border);'>
-            <h4 style='color: var(--text-primary); margin-bottom: 1rem;'>🎯 Academic Highlights</h4>
+            <h4 style='color: var(--text-primary); margin-bottom: 1rem; font-size: 1.15rem !important;'>🎯 Academic Highlights</h4>
             <p style='color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;'>
                 ✓ Strong foundation in AI/ML<br>
                 ✓ 6+ major projects completed<br>
@@ -2016,7 +2006,7 @@ elif st.session_state.page == "Contact":
         st.markdown("""
         <div style='text-align: center; padding: 2rem; background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(124, 58, 237, 0.15)); border-radius: 0.75rem; border: 1px solid var(--border);'>
             <div style='font-size: 3rem; margin-bottom: 1rem;'>📧</div>
-            <h3 style='color: var(--text-primary); margin-bottom: 0.5rem;'>Email</h3>
+            <h3 style='color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.25rem !important;'>Email</h3>
             <p style='color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;'>
                 dheerajmuley006@gmail.com
             </p>
@@ -2032,7 +2022,7 @@ elif st.session_state.page == "Contact":
         st.markdown("""
         <div style='text-align: center; padding: 2rem; background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(124, 58, 237, 0.15)); border-radius: 0.75rem; border: 1px solid var(--border);'>
             <div style='font-size: 3rem; margin-bottom: 1rem;'>💼</div>
-            <h3 style='color: var(--text-primary); margin-bottom: 0.5rem;'>LinkedIn</h3>
+            <h3 style='color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.25rem !important;'>LinkedIn</h3>
             <p style='color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;'>
                 linkedin.com/in/dheeraj-muley
             </p>
@@ -2048,7 +2038,7 @@ elif st.session_state.page == "Contact":
         st.markdown("""
         <div style='text-align: center; padding: 2rem; background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(124, 58, 237, 0.15)); border-radius: 0.75rem; border: 1px solid var(--border);'>
             <div style='font-size: 3rem; margin-bottom: 1rem;'>💻</div>
-            <h3 style='color: var(--text-primary); margin-bottom: 0.5rem;'>GitHub</h3>
+            <h3 style='color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.25rem !important;'>GitHub</h3>
             <p style='color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;'>
                 github.com/dheeraj815
             </p>
