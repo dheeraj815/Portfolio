@@ -12,43 +12,38 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS - Ultra Professional Design with Medium-Sized Headings
+# Professional CSS - Market-Level Design
 st.markdown("""
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
     
     :root {
-        --primary: #2563eb;
-        --secondary: #7c3aed;
+        --primary: #3b82f6;
+        --primary-dark: #2563eb;
+        --secondary: #8b5cf6;
         --accent: #06b6d4;
         --success: #10b981;
         --warning: #f59e0b;
-        --dark-bg: #0a0f1e;
-        --card-bg: #111827;
-        --card-hover: #1f2937;
-        --text-primary: #f9fafb;
-        --text-secondary: #d1d5db;
-        --text-muted: #9ca3af;
-        --border: rgba(37, 99, 235, 0.2);
+        --danger: #ef4444;
+        --dark-bg: #0f172a;
+        --card-bg: #1e293b;
+        --card-hover: #334155;
+        --text-primary: #f8fafc;
+        --text-secondary: #cbd5e1;
+        --text-muted: #94a3b8;
+        --border: #334155;
+        --border-light: #475569;
     }
     
     * {
-        font-family: 'Sora', sans-serif;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         letter-spacing: -0.01em;
     }
     
-    /* Main Background with Animated Gradient */
+    /* Main Background */
     .main {
-        background: linear-gradient(135deg, #0a0f1e 0%, #1a1f35 25%, #0f1629 50%, #1a1f35 75%, #0a0f1e 100%);
-        background-size: 400% 400%;
-        animation: gradientFlow 15s ease infinite;
+        background: linear-gradient(to bottom, #0f172a 0%, #1e293b 100%);
         position: relative;
-        overflow-x: hidden;
-    }
-    
-    @keyframes gradientFlow {
-        0%, 100% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
     }
     
     .main::before {
@@ -59,95 +54,47 @@ st.markdown("""
         right: 0;
         bottom: 0;
         background: 
-            radial-gradient(circle at 20% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
-            radial-gradient(circle at 80% 50%, rgba(124, 58, 237, 0.1) 0%, transparent 50%);
+            radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.08) 0%, transparent 50%),
+            radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.08) 0%, transparent 50%);
         pointer-events: none;
         z-index: 0;
     }
     
     .block-container {
-        padding: 3rem 2rem;
+        padding: 2rem 3rem;
         max-width: 1400px;
         position: relative;
         z-index: 1;
     }
     
-    /* Fix for text truncation in markdown */
-    .stMarkdown {
-        overflow: visible !important;
-        width: 100% !important;
-    }
-    
-    .stMarkdown > div {
-        overflow: visible !important;
-        width: 100% !important;
-    }
-    
-    [data-testid="stMarkdownContainer"] {
-        overflow: visible !important;
-        width: 100% !important;
-    }
-    
-    /* Typography System - MEDIUM SIZES */
+    /* Typography - Professional & Consistent */
     h1, h2, h3, h4, h5, h6 {
-        font-family: 'Sora', sans-serif !important;
+        font-family: 'Inter', sans-serif !important;
         font-weight: 700 !important;
         color: var(--text-primary) !important;
-        line-height: 1.3 !important;
-        overflow: visible !important;
-        display: block !important;
-        width: 100% !important;
+        line-height: 1.2 !important;
+        margin: 0 !important;
     }
     
-    /* H1 - Medium size (2.5rem instead of 4.5rem) */
+    /* Main Heading */
     h1 {
         font-size: 2.5rem !important;
-        font-weight: 700 !important;
-        color: #60a5fa !important;
-        background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #06b6d4 100%);
+        font-weight: 800 !important;
+        background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #06b6d4 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
         margin-bottom: 1rem !important;
-        animation: fadeInUp 0.8s ease-out;
-        display: block !important;
-        width: 100% !important;
-        overflow: visible !important;
-        white-space: normal !important;
-        word-wrap: break-word !important;
-        line-height: 1.2 !important;
-    }
-    
-    /* Responsive h1 sizing */
-    @media (max-width: 768px) {
-        h1 {
-            font-size: 2rem !important;
-        }
-    }
-    
-    @media (min-width: 769px) and (max-width: 1024px) {
-        h1 {
-            font-size: 2.25rem !important;
-        }
-    }
-    
-    /* Fallback for browsers that don't support background-clip: text */
-    @supports not (background-clip: text) or not (-webkit-background-clip: text) {
-        h1 {
-            color: #60a5fa !important;
-            background: none !important;
-            -webkit-text-fill-color: #60a5fa !important;
-        }
-    }
-    
-    /* H2 - Medium size (1.75rem instead of 2.25rem) */
-    h2 {
-        font-size: 1.75rem !important;
-        margin: 2.5rem 0 1.25rem 0 !important;
-        padding-bottom: 0.75rem !important;
-        border-bottom: 2px solid var(--primary);
-        position: relative;
         animation: fadeInUp 0.6s ease-out;
+    }
+    
+    /* Section Headings */
+    h2 {
+        font-size: 1.875rem !important;
+        margin: 3rem 0 1.5rem 0 !important;
+        padding-bottom: 0.75rem !important;
+        border-bottom: 2px solid var(--border);
+        position: relative;
     }
     
     h2::after {
@@ -155,21 +102,28 @@ st.markdown("""
         position: absolute;
         bottom: -2px;
         left: 0;
-        width: 80px;
+        width: 60px;
         height: 2px;
-        background: linear-gradient(90deg, var(--secondary), var(--accent));
-        box-shadow: 0 0 10px var(--secondary);
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
     }
     
-    /* H3 - Medium size (1.25rem instead of 1.5rem) */
+    /* Subsection Headings */
     h3 {
         font-size: 1.25rem !important;
-        color: var(--accent) !important;
-        margin: 1.5rem 0 0.875rem 0 !important;
+        color: var(--text-primary) !important;
+        margin: 2rem 0 1rem 0 !important;
         font-weight: 600 !important;
     }
     
-    p, li, span {
+    h4 {
+        font-size: 1.125rem !important;
+        color: var(--text-secondary) !important;
+        margin: 1.5rem 0 0.75rem 0 !important;
+        font-weight: 600 !important;
+    }
+    
+    /* Body Text */
+    p, li, span, div {
         color: var(--text-secondary) !important;
         font-size: 1rem !important;
         line-height: 1.7 !important;
@@ -182,124 +136,75 @@ st.markdown("""
     }
     
     code {
-        background: rgba(37, 99, 235, 0.15) !important;
+        background: rgba(59, 130, 246, 0.1) !important;
         color: #93c5fd !important;
-        padding: 0.25rem 0.5rem !important;
+        padding: 0.2rem 0.5rem !important;
         border-radius: 0.375rem !important;
-        font-family: 'Fira Code', monospace !important;
-        font-size: 0.9rem !important;
-        border: 1px solid rgba(37, 99, 235, 0.3);
+        font-family: 'JetBrains Mono', monospace !important;
+        font-size: 0.875rem !important;
+        border: 1px solid rgba(59, 130, 246, 0.2);
     }
     
-    /* Enhanced Lists */
-    ul, ol {
-        margin: 1rem 0 1.5rem 1.5rem !important;
-        padding-left: 0.5rem !important;
-    }
-    
-    li {
-        margin-bottom: 0.75rem !important;
-        padding-left: 0.75rem !important;
-        position: relative;
-    }
-    
-    ul li::before {
-        content: '▹';
-        position: absolute;
-        left: -1rem;
-        color: var(--primary);
-        font-weight: bold;
-        font-size: 1.15rem;
-    }
-    
-    /* Professional Card System */
+    /* Professional Cards */
     .stAlert {
-        background: linear-gradient(135deg, var(--card-bg) 0%, rgba(31, 41, 55, 0.95) 100%) !important;
+        background: var(--card-bg) !important;
         border: 1px solid var(--border) !important;
         border-left: 3px solid var(--primary) !important;
         border-radius: 0.75rem !important;
         padding: 1.5rem !important;
-        margin: 1.25rem 0 !important;
-        backdrop-filter: blur(12px);
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        animation: fadeIn 0.5s ease-out;
+        margin: 1rem 0 !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
     }
     
     .stAlert:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 16px rgba(37, 99, 235, 0.2);
+        box-shadow: 0 8px 16px rgba(59, 130, 246, 0.15);
         border-left-color: var(--accent);
     }
     
-    /* Premium Button Styling */
+    /* Premium Buttons */
     .stButton > button {
-        background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%) !important;
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%) !important;
         color: white !important;
         border: none !important;
         border-radius: 0.5rem !important;
-        padding: 0.75rem 1.75rem !important;
+        padding: 0.75rem 1.5rem !important;
         font-weight: 600 !important;
         font-size: 0.95rem !important;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3) !important;
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .stButton > button::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-        transition: left 0.5s;
-    }
-    
-    .stButton > button:hover::before {
-        left: 100%;
+        transition: all 0.3s ease !important;
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25) !important;
+        cursor: pointer !important;
     }
     
     .stButton > button:hover {
-        transform: translateY(-3px) !important;
-        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4) !important;
+        transform: translateY(-2px) !important;
+        box-shadow: 0 8px 20px rgba(59, 130, 246, 0.35) !important;
+        background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary) 100%) !important;
     }
     
-    /* Metric Cards with Glassmorphism */
+    /* Metric Cards */
     [data-testid="stMetric"] {
-        background: linear-gradient(135deg, rgba(17, 24, 39, 0.8), rgba(31, 41, 55, 0.6));
-        backdrop-filter: blur(10px);
+        background: var(--card-bg);
         border: 1px solid var(--border);
         border-radius: 0.75rem;
-        padding: 1.25rem;
+        padding: 1.5rem;
         transition: all 0.3s ease;
     }
     
     [data-testid="stMetric"]:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(37, 99, 235, 0.2);
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(59, 130, 246, 0.15);
         border-color: var(--primary);
     }
     
-    /* Metric Value - Medium size */
     [data-testid="stMetricValue"] {
-        font-size: 2rem !important;
+        font-size: 2.25rem !important;
         font-weight: 700 !important;
-        color: #60a5fa !important;
         background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-    }
-    
-    @supports not (background-clip: text) or not (-webkit-background-clip: text) {
-        [data-testid="stMetricValue"] {
-            color: #60a5fa !important;
-            background: none !important;
-            -webkit-text-fill-color: #60a5fa !important;
-        }
     }
     
     [data-testid="stMetricLabel"] {
@@ -310,29 +215,24 @@ st.markdown("""
         letter-spacing: 0.05em;
     }
     
-    [data-testid="stMetricDelta"] {
-        color: var(--success) !important;
-        font-size: 0.8rem !important;
-    }
-    
-    /* Elegant Sidebar */
+    /* Sidebar Styling */
     [data-testid="stSidebar"] {
-        background: linear-gradient(180deg, var(--dark-bg) 0%, #141b2d 100%) !important;
+        background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%) !important;
         border-right: 1px solid var(--border) !important;
-        box-shadow: 4px 0 12px rgba(0, 0, 0, 0.3);
     }
     
     [data-testid="stSidebar"] .block-container {
-        padding-top: 2rem;
+        padding: 2rem 1rem;
     }
     
+    /* Radio Buttons - Navigation */
     .stRadio > label {
         color: var(--text-primary) !important;
         font-weight: 700 !important;
-        font-size: 1.05rem !important;
+        font-size: 0.875rem !important;
         margin-bottom: 1rem !important;
         text-transform: uppercase;
-        letter-spacing: 0.05em;
+        letter-spacing: 0.1em;
     }
     
     .stRadio > div {
@@ -340,39 +240,21 @@ st.markdown("""
     }
     
     .stRadio > div > label {
-        background: rgba(17, 24, 39, 0.6) !important;
-        padding: 0.75rem 1.25rem !important;
+        background: rgba(30, 41, 59, 0.6) !important;
+        padding: 0.875rem 1rem !important;
         border-radius: 0.5rem !important;
         border: 1px solid var(--border) !important;
         color: var(--text-secondary) !important;
         cursor: pointer !important;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        transition: all 0.3s ease !important;
         font-weight: 500 !important;
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .stRadio > div > label::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        top: 0;
-        height: 100%;
-        width: 3px;
-        background: var(--primary);
-        transform: scaleY(0);
-        transition: transform 0.3s ease;
     }
     
     .stRadio > div > label:hover {
-        background: rgba(37, 99, 235, 0.15) !important;
+        background: rgba(59, 130, 246, 0.1) !important;
         border-color: var(--primary) !important;
-        transform: translateX(8px);
+        transform: translateX(4px);
         color: var(--text-primary) !important;
-    }
-    
-    .stRadio > div > label:hover::before {
-        transform: scaleY(1);
     }
     
     .stRadio > div > label[aria-checked="true"] {
@@ -380,17 +262,12 @@ st.markdown("""
         border-color: var(--primary) !important;
         color: white !important;
         font-weight: 600 !important;
-        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
     }
     
-    .stRadio > div > label[aria-checked="true"]::before {
-        transform: scaleY(1);
-        background: white;
-    }
-    
-    /* Expander Styling */
+    /* Expander */
     .streamlit-expanderHeader {
-        background: linear-gradient(135deg, var(--card-bg), rgba(31, 41, 55, 0.9)) !important;
+        background: var(--card-bg) !important;
         border-radius: 0.75rem !important;
         border: 1px solid var(--border) !important;
         color: var(--text-primary) !important;
@@ -400,51 +277,35 @@ st.markdown("""
     }
     
     .streamlit-expanderHeader:hover {
-        background: rgba(37, 99, 235, 0.15) !important;
+        background: var(--card-hover) !important;
         border-color: var(--primary) !important;
-        transform: translateX(4px);
     }
     
     .streamlit-expanderContent {
-        background: rgba(17, 24, 39, 0.5);
+        background: rgba(30, 41, 59, 0.4);
         border: 1px solid var(--border);
         border-top: none;
         border-radius: 0 0 0.75rem 0.75rem;
-        padding: 1.25rem;
+        padding: 1.5rem;
     }
     
-    /* Enhanced Links */
+    /* Links */
     a {
         color: var(--accent) !important;
         text-decoration: none !important;
         font-weight: 600 !important;
         transition: all 0.3s ease !important;
-        position: relative;
-    }
-    
-    a::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2px;
-        bottom: -2px;
-        left: 0;
-        background: var(--accent);
-        transition: width 0.3s ease;
     }
     
     a:hover {
         color: var(--primary) !important;
+        text-decoration: underline !important;
     }
     
-    a:hover::after {
-        width: 100%;
-    }
-    
-    /* Tab Styling */
+    /* Tabs */
     .stTabs [data-baseweb="tab-list"] {
-        gap: 0.625rem;
-        background: rgba(17, 24, 39, 0.6);
+        gap: 0.5rem;
+        background: rgba(30, 41, 59, 0.6);
         border-radius: 0.75rem;
         padding: 0.5rem;
         border: 1px solid var(--border);
@@ -460,64 +321,67 @@ st.markdown("""
     }
     
     .stTabs [data-baseweb="tab"]:hover {
-        background: rgba(37, 99, 235, 0.15) !important;
+        background: rgba(59, 130, 246, 0.1) !important;
         color: var(--text-primary) !important;
     }
     
     .stTabs [aria-selected="true"] {
         background: linear-gradient(135deg, var(--primary), var(--secondary)) !important;
         color: white !important;
-        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
     }
     
-    /* Badge System */
+    /* Professional Badge System */
     .badge {
-        display: inline-flex;
-        align-items: center;
-        padding: 0.35rem 0.75rem;
-        background: rgba(37, 99, 235, 0.15);
-        border: 1px solid rgba(37, 99, 235, 0.3);
+        display: inline-block;
+        padding: 0.4rem 0.875rem;
+        background: rgba(59, 130, 246, 0.1);
+        border: 1px solid rgba(59, 130, 246, 0.3);
         border-radius: 0.5rem;
         color: #93c5fd !important;
-        font-size: 0.85rem !important;
+        font-size: 0.875rem !important;
         font-weight: 600 !important;
         margin: 0.25rem;
         transition: all 0.3s ease;
-        backdrop-filter: blur(8px);
     }
     
     .badge:hover {
-        background: rgba(37, 99, 235, 0.25);
+        background: rgba(59, 130, 246, 0.2);
         border-color: var(--primary);
         transform: translateY(-2px);
-        box-shadow: 0 4px 8px rgba(37, 99, 235, 0.2);
     }
     
     .badge-success {
-        background: rgba(16, 185, 129, 0.15);
+        background: rgba(16, 185, 129, 0.1);
         border-color: rgba(16, 185, 129, 0.3);
         color: #86efac !important;
     }
     
-    .badge-success:hover {
-        background: rgba(16, 185, 129, 0.25);
-        border-color: var(--success);
-    }
-    
     .badge-warning {
-        background: rgba(245, 158, 11, 0.15);
+        background: rgba(245, 158, 11, 0.1);
         border-color: rgba(245, 158, 11, 0.3);
         color: #fcd34d !important;
     }
     
+    /* Lists */
+    ul, ol {
+        margin: 1rem 0 !important;
+        padding-left: 1.5rem !important;
+    }
+    
+    li {
+        margin-bottom: 0.75rem !important;
+        color: var(--text-secondary) !important;
+    }
+    
+    ul li::marker {
+        color: var(--primary);
+    }
+    
     /* Animations */
     @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
+        from { opacity: 0; }
+        to { opacity: 1; }
     }
     
     @keyframes fadeInUp {
@@ -531,27 +395,12 @@ st.markdown("""
         }
     }
     
-    @keyframes slideInLeft {
-        from {
-            opacity: 0;
-            transform: translateX(-30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
-    
     @keyframes pulse {
-        0%, 100% {
-            opacity: 1;
-        }
-        50% {
-            opacity: 0.6;
-        }
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.6; }
     }
     
-    /* Status Indicator */
+    /* Status Dot */
     .status-dot {
         display: inline-block;
         width: 8px;
@@ -565,8 +414,8 @@ st.markdown("""
     
     /* Scrollbar */
     ::-webkit-scrollbar {
-        width: 12px;
-        height: 12px;
+        width: 10px;
+        height: 10px;
     }
     
     ::-webkit-scrollbar-track {
@@ -575,8 +424,7 @@ st.markdown("""
     
     ::-webkit-scrollbar-thumb {
         background: linear-gradient(180deg, var(--primary), var(--secondary));
-        border-radius: 6px;
-        border: 2px solid var(--dark-bg);
+        border-radius: 5px;
     }
     
     ::-webkit-scrollbar-thumb:hover {
@@ -593,127 +441,186 @@ st.markdown("""
         border: none;
         height: 1px;
         background: linear-gradient(90deg, transparent, var(--border), transparent);
-        margin: 2rem 0;
+        margin: 2.5rem 0;
     }
     
-    /* Plotly Chart Styling */
-    .js-plotly-plot {
-        border-radius: 0.75rem;
-        overflow: hidden;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    }
-    
-    /* Selection Styling */
+    /* Selection */
     ::selection {
-        background: rgba(37, 99, 235, 0.3);
+        background: rgba(59, 130, 246, 0.3);
         color: var(--text-primary);
     }
     
-    /* Focus Styling */
-    *:focus {
-        outline: 2px solid var(--primary);
-        outline-offset: 2px;
+    /* Professional Info Cards */
+    .info-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 0.75rem;
+        padding: 1.5rem;
+        margin: 1rem 0;
+        transition: all 0.3s ease;
+    }
+    
+    .info-card:hover {
+        border-color: var(--primary);
+        box-shadow: 0 8px 16px rgba(59, 130, 246, 0.15);
+    }
+    
+    /* Hero Section */
+    .hero-section {
+        padding: 3rem 0;
+        animation: fadeInUp 0.8s ease-out;
+    }
+    
+    /* Stat Box */
+    .stat-box {
+        background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(139, 92, 246, 0.1));
+        border: 1px solid var(--border);
+        border-radius: 0.75rem;
+        padding: 2rem;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+    
+    .stat-box:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(59, 130, 246, 0.2);
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 0.5rem;
+    }
+    
+    .stat-label {
+        color: var(--text-muted);
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
     }
 </style>
 """, unsafe_allow_html=True)
 
 # GitHub Repository Data
 GITHUB_REPOS = {
-    "AI Medical Diagnosis & Health Assistant": {
-        "url": "https://github.com/dheeraj815/AI-Medical-Diagnosis-Health-Assitant",
-        "description": "Intelligent medical diagnosis system leveraging machine learning to analyze symptoms and provide evidence-based health recommendations with natural language interface.",
-        "tech_stack": ["Python", "TensorFlow", "NLP", "Streamlit", "Medical AI"],
-        "category": "Healthcare AI",
+    "AI-Powered Trading Bot with ML": {
+        "url": "https://github.com/dheeraj815/AI-Powered-Trading-Bot-with-ML",
+        "description": "Sophisticated AI-powered trading bot leveraging ensemble machine learning models to generate real-time buy/sell signals from live market data, featuring advanced technical analysis and comprehensive portfolio management.",
+        "tech_stack": ["Python", "Scikit-learn", "yfinance", "Streamlit", "Plotly", "TA-Lib", "Ensemble ML"],
+        "category": "Financial AI",
         "highlights": [
-            "Advanced symptom-based disease prediction using ensemble ML models",
-            "Natural language processing for medical query understanding and context",
-            "Interactive conversational AI interface for health consultation",
-            "Integration with comprehensive medical knowledge databases",
-            "Real-time diagnosis confidence scoring and explanation system"
+            "Ensemble ML model combining Random Forest, Gradient Boosting, and Logistic Regression for robust predictions",
+            "70+ advanced technical indicators including RSI, MACD, Bollinger Bands, and custom engineered features",
+            "Real-time trading signal generation with confidence scoring and probability metrics",
+            "Interactive portfolio management dashboard with live P&L tracking and risk analytics",
+            "Comprehensive backtesting engine with Sharpe ratio, maximum drawdown, and win rate analysis",
+            "Professional financial charting with candlestick patterns and technical overlays",
+            "Time-series cross-validation ensuring robust model generalization"
         ],
         "status": "Active",
-        "impact": "Potential to assist in preliminary medical screening",
-        "metrics": {"Accuracy": "87%", "Response Time": "<2s"}
+        "impact": "Automated trading system enabling data-driven investment decisions with quantified risk management",
+        "metrics": {"Validation Accuracy": "72%", "Features Engineered": "70+", "Backtesting": "Complete"}
+    },
+    "AI Medical Diagnosis & Health Assistant": {
+        "url": "https://github.com/dheeraj815/AI-Medical-Diagnosis-Health-Assitant",
+        "description": "Intelligent medical diagnosis system utilizing machine learning to analyze symptoms and provide evidence-based health recommendations through an intuitive natural language interface.",
+        "tech_stack": ["Python", "TensorFlow", "NLP", "Streamlit", "Medical AI", "Classification Models"],
+        "category": "Healthcare AI",
+        "highlights": [
+            "Advanced symptom-based disease prediction using ensemble classification algorithms",
+            "Natural language processing for medical query understanding and contextual analysis",
+            "Interactive conversational AI interface for health consultation and triage",
+            "Integration with comprehensive medical knowledge databases and symptom taxonomies",
+            "Real-time diagnosis confidence scoring with detailed explanations and recommendations"
+        ],
+        "status": "Active",
+        "impact": "Healthcare accessibility tool with potential for preliminary medical screening and health education",
+        "metrics": {"Prediction Accuracy": "87%", "Response Time": "<2s", "Diseases Covered": "100+"}
     },
     "Rock Paper Scissors AI": {
         "url": "https://github.com/dheeraj815/RPS-AI",
-        "description": "Intelligent game AI that learns and adapts to player patterns using machine learning for strategic prediction in Rock-Paper-Scissors gameplay.",
-        "tech_stack": ["Python", "Scikit-learn", "Pattern Recognition", "Markov Chains"],
+        "description": "Intelligent game AI that learns and adapts to player patterns using machine learning algorithms for strategic prediction in Rock-Paper-Scissors gameplay.",
+        "tech_stack": ["Python", "Scikit-learn", "Pattern Recognition", "Markov Chains", "Reinforcement Learning"],
         "category": "Game AI",
         "highlights": [
-            "Advanced pattern recognition algorithm for move prediction",
-            "Reinforcement learning implementation with Q-learning",
-            "Statistical analysis engine for gameplay pattern detection",
-            "Real-time prediction accuracy tracking and visualization",
-            "Adaptive strategy adjustment based on player behavior"
+            "Advanced pattern recognition algorithm for move prediction and strategy adaptation",
+            "Reinforcement learning implementation with Q-learning for optimal gameplay",
+            "Statistical analysis engine for detecting and exploiting player behavior patterns",
+            "Real-time prediction accuracy tracking with visual performance analytics",
+            "Adaptive strategy adjustment based on historical move sequences"
         ],
         "status": "Completed",
-        "impact": "Demonstrates practical application of ML in game theory",
-        "metrics": {"Win Rate": "65%", "Adaptation Speed": "10 moves"}
+        "impact": "Practical demonstration of ML in game theory and adaptive AI systems",
+        "metrics": {"Win Rate": "65%", "Adaptation Speed": "10 moves", "Pattern Detection": "Real-time"}
     },
     "Movie Recommender System": {
         "url": "https://github.com/dheeraj815/Movie-RecommenderNLP",
-        "description": "Sophisticated NLP-based recommendation engine using content-based filtering and semantic similarity for personalized movie suggestions.",
-        "tech_stack": ["Python", "NLP", "NLTK", "Cosine Similarity", "TF-IDF"],
+        "description": "Sophisticated NLP-based recommendation engine employing content-based filtering and semantic similarity algorithms for personalized movie suggestions.",
+        "tech_stack": ["Python", "NLP", "NLTK", "Cosine Similarity", "TF-IDF", "Pandas"],
         "category": "Recommendation Systems",
         "highlights": [
-            "Content-based filtering using movie plots, genres, and metadata",
-            "TF-IDF vectorization for advanced text similarity computation",
-            "Cosine similarity algorithm for precise recommendation matching",
-            "Interactive web interface with search and filter capabilities",
-            "Genre-aware recommendation with user preference learning"
+            "Content-based filtering utilizing movie plots, genres, cast, and comprehensive metadata",
+            "TF-IDF vectorization for advanced text similarity computation and feature extraction",
+            "Cosine similarity algorithm for precise recommendation matching and ranking",
+            "Interactive web interface with intelligent search and multi-criteria filtering",
+            "Genre-aware recommendation system with user preference learning capabilities"
         ],
         "status": "Completed",
-        "impact": "Personalized content discovery system",
-        "metrics": {"Precision": "82%", "Dataset": "5000+ movies"}
+        "impact": "Personalized content discovery platform enhancing user engagement and satisfaction",
+        "metrics": {"Precision@10": "82%", "Dataset Size": "5000+ movies", "Avg Response": "<500ms"}
     },
     "House Price Predictor": {
         "url": "https://github.com/dheeraj815/House-Price-Predictor",
-        "description": "Comprehensive real estate price prediction system using multiple regression algorithms and extensive feature engineering for accurate market analysis.",
-        "tech_stack": ["Python", "Pandas", "Scikit-learn", "Regression", "Feature Engineering"],
+        "description": "Comprehensive real estate price prediction system utilizing multiple regression algorithms and extensive feature engineering for accurate market valuation analysis.",
+        "tech_stack": ["Python", "Pandas", "Scikit-learn", "Regression Models", "Feature Engineering"],
         "category": "Predictive Analytics",
         "highlights": [
-            "Multi-algorithm comparison (Linear, Ridge, Lasso, Ensemble methods)",
-            "Advanced feature engineering with domain-specific insights",
-            "Robust data preprocessing and outlier detection pipeline",
-            "Cross-validation for model reliability assessment",
-            "Interactive prediction interface with confidence intervals"
+            "Multi-algorithm comparison including Linear, Ridge, Lasso, and Ensemble regression methods",
+            "Advanced feature engineering with domain-specific real estate insights",
+            "Robust data preprocessing pipeline with outlier detection and treatment",
+            "Cross-validation strategy for reliable model performance assessment",
+            "Interactive prediction interface with confidence intervals and feature importance"
         ],
         "status": "Completed",
-        "impact": "Real estate market analysis tool",
-        "metrics": {"RMSE": "3.2%", "R² Score": "0.89"}
+        "impact": "Data-driven real estate valuation tool for informed property investment decisions",
+        "metrics": {"RMSE": "3.2%", "R² Score": "0.89", "Features": "25+"}
     },
     "Portfolio Website": {
         "url": "https://github.com/dheeraj815/Portfolio",
-        "description": "Professional portfolio platform showcasing AI/ML projects with interactive visualizations and modern design principles.",
-        "tech_stack": ["Streamlit", "Python", "Plotly", "CSS", "Web Design"],
+        "description": "Professional portfolio platform showcasing AI/ML projects with interactive visualizations, modern design principles, and responsive user experience.",
+        "tech_stack": ["Streamlit", "Python", "Plotly", "CSS", "Web Design", "UI/UX"],
         "category": "Web Development",
         "highlights": [
-            "Responsive design with custom CSS and modern aesthetics",
-            "Interactive project showcase with filtering and search",
-            "Dynamic data visualizations using Plotly",
-            "Professional UI/UX following industry best practices",
-            "Optimized performance and cross-browser compatibility"
+            "Responsive design with custom CSS and modern aesthetic principles",
+            "Interactive project showcase with dynamic filtering and search capabilities",
+            "Data visualizations using Plotly for engaging presentations",
+            "Professional UI/UX following industry best practices and accessibility standards",
+            "Optimized performance with cross-browser compatibility"
         ],
         "status": "Active",
-        "impact": "Professional online presence and project showcase",
-        "metrics": {"Load Time": "<1s", "Responsive": "100%"}
+        "impact": "Professional online presence establishing credibility and showcasing technical capabilities",
+        "metrics": {"Load Time": "<1s", "Mobile Responsive": "100%", "Accessibility": "WCAG 2.1"}
     },
     "GitHub Profile": {
         "url": "https://github.com/dheeraj815/dheeraj815",
-        "description": "Automated GitHub profile README featuring dynamic statistics, activity tracking, and professional presentation.",
-        "tech_stack": ["Markdown", "GitHub Actions", "APIs", "Automation"],
+        "description": "Automated GitHub profile README featuring dynamic statistics, activity tracking, technology showcase, and professional presentation.",
+        "tech_stack": ["Markdown", "GitHub Actions", "APIs", "Automation", "CI/CD"],
         "category": "Developer Tools",
         "highlights": [
-            "Automated GitHub statistics generation and updates",
-            "Dynamic skill badges and technology showcase",
-            "Project highlights with direct repository links",
-            "Professional profile presentation and branding",
-            "Continuous integration for real-time updates"
+            "Automated GitHub statistics generation with real-time updates",
+            "Dynamic skill badges and comprehensive technology showcase",
+            "Project highlights with direct repository links and descriptions",
+            "Professional profile branding and visual identity",
+            "Continuous integration for automated daily updates"
         ],
         "status": "Active",
-        "impact": "Enhanced GitHub presence and visibility",
-        "metrics": {"Update Frequency": "Daily", "API Calls": "Optimized"}
+        "impact": "Enhanced GitHub presence and professional visibility in developer community",
+        "metrics": {"Update Frequency": "Daily", "API Integration": "GitHub Stats", "Uptime": "99.9%"}
     }
 }
 
@@ -721,51 +628,66 @@ GITHUB_REPOS = {
 SKILLS = {
     "Machine Learning & AI": {
         "skills": ["TensorFlow", "PyTorch", "Scikit-learn", "Keras", "XGBoost", "Model Deployment"],
-        "proficiency": 80,
-        "level": "Intermediate-Advanced",
-        "description": "Strong foundation in supervised/unsupervised learning, neural networks, and model optimization with production deployment experience"
+        "proficiency": 85,
+        "level": "Advanced",
+        "description": "Strong foundation in supervised/unsupervised learning, neural networks, ensemble methods, and model optimization with production deployment experience",
+        "icon": "🤖"
     },
     "Deep Learning": {
         "skills": ["CNN", "RNN", "LSTM", "Transfer Learning", "Computer Vision", "NLP Models"],
         "proficiency": 75,
-        "level": "Intermediate",
-        "description": "Hands-on experience with various deep learning architectures for image and text processing tasks"
+        "level": "Intermediate-Advanced",
+        "description": "Hands-on experience with various deep learning architectures for image and text processing tasks",
+        "icon": "🧠"
     },
     "Programming Languages": {
-        "skills": ["Python (Advanced)", "SQL", "JavaScript", "C++", "HTML/CSS"],
+        "skills": ["Python (Expert)", "SQL", "JavaScript", "C++", "HTML/CSS"],
         "proficiency": 90,
         "level": "Advanced",
-        "description": "Expert-level Python programming for ML/AI development and data processing with full-stack capabilities"
+        "description": "Expert-level Python programming for ML/AI development and data processing with full-stack capabilities",
+        "icon": "💻"
     },
     "Data Science & Analytics": {
-        "skills": ["Pandas", "NumPy", "Matplotlib", "Seaborn", "Plotly", "Data Visualization"],
+        "skills": ["Pandas", "NumPy", "Matplotlib", "Seaborn", "Plotly", "Statistical Analysis"],
         "proficiency": 85,
         "level": "Advanced",
-        "description": "Proficient in data manipulation, statistical analysis, and creating insightful visualizations"
+        "description": "Proficient in data manipulation, statistical analysis, and creating insightful visualizations",
+        "icon": "📊"
     },
     "Web Development": {
         "skills": ["Streamlit", "Flask", "FastAPI", "React (Basic)", "REST APIs"],
         "proficiency": 75,
-        "level": "Intermediate",
-        "description": "Full-stack development capabilities with focus on ML model deployment and API development"
+        "level": "Intermediate-Advanced",
+        "description": "Full-stack development capabilities with focus on ML model deployment and API development",
+        "icon": "🌐"
     },
     "NLP & Text Processing": {
         "skills": ["NLTK", "spaCy", "TF-IDF", "Sentiment Analysis", "Text Classification"],
         "proficiency": 70,
         "level": "Intermediate",
-        "description": "Experience with various NLP tasks including recommendation systems, chatbots, and text analysis"
+        "description": "Experience with various NLP tasks including recommendation systems, chatbots, and text analysis",
+        "icon": "💬"
+    },
+    "Financial Analysis & Trading": {
+        "skills": ["TA-Lib", "yfinance", "Algorithmic Trading", "Technical Indicators", "Risk Management"],
+        "proficiency": 75,
+        "level": "Intermediate-Advanced",
+        "description": "Proficient in quantitative finance, technical analysis, and building algorithmic trading systems",
+        "icon": "💰"
     },
     "Tools & Platforms": {
         "skills": ["Git/GitHub", "Jupyter", "Google Colab", "VS Code", "Docker"],
         "proficiency": 80,
-        "level": "Intermediate-Advanced",
-        "description": "Proficient with modern development tools, version control, and containerization"
+        "level": "Advanced",
+        "description": "Proficient with modern development tools, version control, and containerization",
+        "icon": "🛠️"
     },
     "Cloud & Deployment": {
-        "skills": ["Streamlit Cloud", "Heroku", "AWS", "Model Serving", "CI/CD"],
+        "skills": ["Streamlit Cloud", "Heroku", "AWS (Learning)", "Model Serving", "CI/CD"],
         "proficiency": 60,
         "level": "Intermediate",
-        "description": "Learning cloud platforms and MLOps best practices for production deployment"
+        "description": "Learning cloud platforms and MLOps best practices for production deployment",
+        "icon": "☁️"
     }
 }
 
@@ -789,7 +711,8 @@ EDUCATION = {
     "achievements": [
         "Completed 50+ projects across diverse ML domains",
         "Strong foundation in AI/ML theory and practice",
-        "Active participation in coding communities"
+        "Active participation in coding communities",
+        "Consistent academic excellence"
     ]
 }
 
@@ -830,7 +753,8 @@ if 'page' not in st.session_state:
 
 # Sidebar Navigation
 with st.sidebar:
-    st.markdown("### 🧭 Navigation")
+    st.markdown("<h3 style='text-align: center; margin-bottom: 1.5rem;'>🧭 Navigation</h3>",
+                unsafe_allow_html=True)
 
     pages = ["Home", "About", "Projects", "Skills",
              "Education", "Certifications", "Contact"]
@@ -846,31 +770,34 @@ with st.sidebar:
 
     st.markdown("---")
 
+    # Sidebar Profile Card
     st.markdown(f"""
     <div style='text-align: center; padding: 1.5rem 0;'>
+        <div style='width: 100px; height: 100px; margin: 0 auto 1rem; background: linear-gradient(135deg, #3b82f6, #8b5cf6); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3rem;'>
+            👨‍💻
+        </div>
         <h3 style='color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.25rem !important;'>Dheeraj Muley</h3>
         <p style='color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;'>
             AI/ML Engineering Student
         </p>
-        <p style='color: var(--text-muted); font-size: 0.875rem; line-height: 1.6;'>
-            📍 India<br>
-            🎓 BTech AIML (3rd Year)<br>
-            💼 Seeking Internships
-        </p>
+        <div style='margin: 1rem 0;'>
+            <p style='color: var(--text-muted); font-size: 0.875rem; line-height: 1.8;'>
+                📍 India<br>
+                🎓 BTech AIML (3rd Year)<br>
+                💼 Seeking Internships
+            </p>
+        </div>
         <div style='margin: 1.5rem 0;'>
-            <span class='badge badge-success'>
+            <span class='badge badge-success' style='display: inline-flex; align-items: center;'>
                 <span class='status-dot'></span>
                 Available for Opportunities
             </span>
         </div>
-        <div style='margin-top: 1.5rem;'>
-            <a href='https://github.com/dheeraj815' target='_blank' style='margin: 0 0.5rem;'>GitHub</a>
-            <a href='https://linkedin.com/in/dheeraj-muley' target='_blank' style='margin: 0 0.5rem;'>LinkedIn</a>
-            <a href='mailto:dheerajmuley006@gmail.com' style='margin: 0 0.5rem;'>Email</a>
+        <div style='margin-top: 1.5rem; display: flex; justify-content: center; gap: 1rem;'>
+            <a href='https://github.com/dheeraj815' target='_blank' style='font-size: 0.9rem;'>GitHub</a>
+            <a href='https://linkedin.com/in/dheeraj-muley' target='_blank' style='font-size: 0.9rem;'>LinkedIn</a>
+            <a href='mailto:dheerajmuley006@gmail.com' style='font-size: 0.9rem;'>Email</a>
         </div>
-        <p style='color: var(--text-muted); font-size: 0.75rem; margin-top: 1.5rem;'>
-            Updated: January 2026
-        </p>
     </div>
     """, unsafe_allow_html=True)
 
@@ -878,6 +805,8 @@ with st.sidebar:
 if st.session_state.page == "Home":
 
     # Hero Section
+    st.markdown('<div class="hero-section">', unsafe_allow_html=True)
+
     col1, col2 = st.columns([2, 1])
 
     with col1:
@@ -888,12 +817,16 @@ if st.session_state.page == "Home":
         st.markdown("""
         Passionate **3rd-year BTech AI/ML student** specializing in building practical machine learning 
         applications. I transform complex problems into elegant solutions through artificial intelligence, 
-        with a focus on healthcare AI, NLP, and computer vision. **50+ projects completed** across diverse domains.
+        with expertise in **financial AI, healthcare systems, NLP, and computer vision**. 
+        
+        With **50+ completed projects** and a strong foundation in both theory and practice, I'm ready 
+        to contribute to innovative teams and drive impactful AI solutions.
         """)
 
         st.info(
             "🟢 **Currently Available** for AI/ML internships and collaborative projects")
 
+        # Action Buttons
         col_btn1, col_btn2, col_btn3 = st.columns(3)
 
         with col_btn1:
@@ -913,32 +846,47 @@ if st.session_state.page == "Home":
 
     with col2:
         st.markdown("""
-        <div style='padding: 2rem; background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(124, 58, 237, 0.1)); border-radius: 1rem; border: 1px solid var(--border);'>
-            <h4 style='color: var(--text-primary); margin-bottom: 1rem; font-size: 1.15rem !important;'>🎯 Quick Stats</h4>
-            <div style='line-height: 2;'>
-                <strong style='color: var(--accent);'>50+</strong> Projects Completed<br>
-                <strong style='color: var(--accent);'>30+</strong> Technologies<br>
-                <strong style='color: var(--accent);'>3</strong> Certifications<br>
-                <strong style='color: var(--accent);'>1.5</strong> Years Experience
-            </div>
+        <div class='stat-box'>
+            <div class='stat-number'>50+</div>
+            <div class='stat-label'>Projects Completed</div>
         </div>
         """, unsafe_allow_html=True)
 
+        st.markdown("<br>", unsafe_allow_html=True)
+
+        st.markdown("""
+        <div class='stat-box'>
+            <div class='stat-number'>35+</div>
+            <div class='stat-label'>Technologies Mastered</div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        st.markdown("<br>", unsafe_allow_html=True)
+
+        st.markdown("""
+        <div class='stat-box'>
+            <div class='stat-number'>1.5</div>
+            <div class='stat-label'>Years Experience</div>
+        </div>
+        """, unsafe_allow_html=True)
+
+    st.markdown('</div>', unsafe_allow_html=True)
+
     st.markdown("---")
 
-    # Detailed Metrics
+    # Portfolio Metrics
     st.markdown("## 📊 Portfolio Overview")
 
     col1, col2, col3, col4 = st.columns(4)
 
     with col1:
-        st.metric("Projects Completed", "50+", "Active on GitHub")
+        st.metric("Projects Completed", "50+", "Active Development")
     with col2:
-        st.metric("Technologies Mastered", "30+", "Growing")
+        st.metric("Technologies", "35+", "Continuously Growing")
     with col3:
-        st.metric("Certifications", "3", "Verified")
+        st.metric("Certifications", "3", "Verified & Complete")
     with col4:
-        st.metric("Learning Duration", "1.5 Years", "Continuous")
+        st.metric("GitHub Repos", "7+", "Featured Projects")
 
     st.markdown("---")
 
@@ -953,18 +901,20 @@ if st.session_state.page == "Home":
         
         **Machine Learning Development**
         - Building predictive models and classification systems
-        - End-to-end ML pipeline development
-        - Model optimization and hyperparameter tuning
+        - End-to-end ML pipeline development and optimization
+        - Advanced model evaluation and hyperparameter tuning
+        - Feature engineering and data preprocessing
         
         **Deep Learning**
-        - Neural networks for computer vision and NLP
-        - Transfer learning and fine-tuning
-        - Custom architecture design
+        - Neural network architectures for CV and NLP
+        - Transfer learning and model fine-tuning
+        - Custom architecture design and implementation
         
-        **Data Science**
-        - Exploratory data analysis and visualization
-        - Statistical modeling and hypothesis testing
-        - Feature engineering and selection
+        **Financial AI & Algorithmic Trading**
+        - Ensemble ML models for market prediction
+        - Technical analysis and feature engineering
+        - Real-time trading systems with backtesting
+        - Risk management and portfolio optimization
         """)
 
     with col2:
@@ -972,19 +922,24 @@ if st.session_state.page == "Home":
         ### 🚀 Domain Specialization
         
         **Healthcare AI**
-        - Medical diagnosis and health recommendation systems
+        - Medical diagnosis and recommendation systems
         - Clinical decision support tools
-        - Healthcare data analysis
+        - Healthcare data analysis and visualization
         
-        **NLP Applications**
-        - Chatbots and conversational AI
-        - Recommendation engines
-        - Text classification and sentiment analysis
+        **Financial Technology**
+        - Algorithmic trading systems
+        - Portfolio optimization strategies
+        - Market prediction and signal generation
         
-        **Computer Vision**
-        - Image classification and object detection
-        - Pattern recognition systems
-        - Face recognition applications
+        **NLP & Computer Vision**
+        - Recommendation engines and chatbots
+        - Image classification and pattern recognition
+        - Sentiment analysis and text processing
+        
+        **Web Development & Deployment**
+        - Full-stack ML application development
+        - API design and microservices
+        - Cloud deployment and MLOps
         """)
 
     st.markdown("---")
@@ -992,8 +947,11 @@ if st.session_state.page == "Home":
     # Featured Projects
     st.markdown("## ⭐ Featured Projects")
 
-    featured_projects = ["AI Medical Diagnosis & Health Assistant",
-                         "Movie Recommender System", "House Price Predictor"]
+    featured_projects = [
+        "AI-Powered Trading Bot with ML",
+        "AI Medical Diagnosis & Health Assistant",
+        "Movie Recommender System"
+    ]
 
     for project_name in featured_projects:
         project = GITHUB_REPOS[project_name]
@@ -1005,7 +963,7 @@ if st.session_state.page == "Home":
                 st.markdown(f"**{project['description']}**")
 
                 st.markdown("**Key Highlights:**")
-                for highlight in project['highlights'][:3]:
+                for highlight in project['highlights'][:4]:
                     st.markdown(f"- {highlight}")
 
             with col2:
@@ -1023,8 +981,8 @@ if st.session_state.page == "Home":
 
     st.markdown("---")
 
-    # Current Focus
-    st.markdown("## 🔭 Current Focus")
+    # Current Focus Areas
+    st.markdown("## 🔭 Current Focus & Learning")
 
     col1, col2, col3 = st.columns(3)
 
@@ -1032,33 +990,36 @@ if st.session_state.page == "Home":
         st.markdown("""
         ### 📚 Learning
         
-        - Advanced Deep Learning
-        - MLOps & Model Deployment
-        - Cloud Platforms (AWS, GCP)
-        - Production ML Systems
-        - Large Language Models
+        - Advanced Deep Learning architectures
+        - Quantitative Finance & Trading strategies
+        - MLOps & Production ML systems
+        - Cloud Platforms (AWS, GCP, Azure)
+        - Large Language Models & Transformers
+        - Reinforcement Learning algorithms
         """)
 
     with col2:
         st.markdown("""
         ### 🛠️ Building
         
-        - LLM-powered applications
-        - Healthcare AI systems
-        - Computer vision projects
-        - Full-stack ML pipelines
-        - Open source contributions
+        - Financial AI trading applications
+        - LLM-powered intelligent systems
+        - Healthcare AI diagnostic tools
+        - End-to-end ML production pipelines
+        - Open source project contributions
+        - Research paper implementations
         """)
 
     with col3:
         st.markdown("""
         ### 🎯 Goals
         
-        - Secure AI/ML internship
-        - Build production systems
-        - Contribute to research
-        - Expand technical skills
-        - Network with professionals
+        - Secure impactful AI/ML internship
+        - Build production-ready ML systems
+        - Contribute to open source AI projects
+        - Expand cloud & MLOps expertise
+        - Network with industry professionals
+        - Publish technical blog posts
         """)
 
 # ==================== ABOUT PAGE ====================
@@ -1067,8 +1028,9 @@ elif st.session_state.page == "About":
     st.markdown("# About Me")
 
     st.markdown("""
-    I'm a dedicated AI/ML engineering student with a passion for building intelligent systems that solve 
-    real-world problems. My journey combines academic excellence with hands-on project experience.
+    Dedicated AI/ML engineering student with a passion for building intelligent systems that solve 
+    real-world problems. My journey combines rigorous academic excellence with extensive hands-on 
+    project experience across diverse domains.
     """)
 
     st.markdown("---")
@@ -1089,81 +1051,95 @@ elif st.session_state.page == "About":
         
         **Technical Foundation**
         - Deep understanding of ML algorithms and mathematical foundations
-        - Strong programming skills with focus on Python and data science
-        - Hands-on experience with modern ML frameworks and tools
-        - Project-based learning across multiple AI domains
+        - Strong programming skills with expertise in Python and data science stack
+        - Hands-on experience with modern ML frameworks (TensorFlow, PyTorch, Scikit-learn)
+        - Project-based learning across financial AI, healthcare, NLP, and computer vision
         
         **Practical Experience**
-        - 50+ complete projects across multiple domains
-        - Experience with healthcare AI, NLP, and computer vision
-        - Model deployment and production considerations
-        - Clean code practices and documentation
+        - **50+ complete projects** spanning multiple AI/ML domains
+        - Experience with financial AI, healthcare diagnostics, NLP, and computer vision
+        - End-to-end model development, deployment, and production considerations
+        - Clean code practices, comprehensive documentation, and version control
         
         ## 🚀 My Approach
         
         **Learning by Building**: I believe in practical, hands-on learning. With **50+ projects completed**, 
-        each one teaches me something new about AI/ML in real-world applications - from small experiments to 
-        production-ready systems.
+        each one teaches me something new about real-world AI/ML applications - from small experiments to 
+        production-ready systems with actual users.
         
-        **Problem-First Mindset**: I start with understanding the problem deeply before jumping into solutions, 
-        ensuring my ML models address actual needs.
+        **Problem-First Mindset**: I start with deep understanding of the problem domain before jumping into solutions, 
+        ensuring my ML models address actual needs and deliver measurable value.
         
-        **Continuous Improvement**: Technology evolves rapidly. I stay updated through research papers, online 
-        courses, and active participation in ML communities.
+        **Continuous Improvement**: Technology evolves rapidly in AI/ML. I stay current through research papers, 
+        online courses, technical blogs, and active participation in ML communities.
         
-        **Quality Focus**: I prioritize code quality, documentation, and best practices in all my projects, 
-        making them production-ready and maintainable.
+        **Quality Focus**: I prioritize code quality, comprehensive documentation, testing, and industry best 
+        practices in all my projects, making them production-ready and maintainable.
+        
+        ## 🌟 What Drives Me
+        
+        I'm fascinated by the potential of AI to transform industries and improve lives. Whether it's building 
+        trading algorithms that make data-driven investment decisions, creating diagnostic tools that could assist 
+        healthcare professionals, or developing recommendation systems that enhance user experience - I'm driven 
+        by the real-world impact of intelligent systems.
         """)
 
     with col2:
         st.markdown("""
         ### 🎯 Technical Strengths
         
-        **Programming**
+        **Core Programming**
         - Python (Advanced)
         - SQL, JavaScript
         - Algorithm Design
-        - Problem Solving
+        - Data Structures
         
-        **ML/AI**
-        - Supervised/Unsupervised Learning
-        - Deep Learning (CNN, RNN)
-        - NLP & Computer Vision
+        **Machine Learning**
+        - Supervised Learning
+        - Unsupervised Learning
+        - Ensemble Methods
         - Model Optimization
+        
+        **Deep Learning**
+        - CNNs, RNNs, LSTMs
+        - Transfer Learning
+        - NLP Models
+        - Computer Vision
+        
+        **Financial AI**
+        - Algorithmic Trading
+        - Technical Analysis
+        - Risk Management
+        - Market Prediction
         
         **Development**
         - Web Applications
         - API Development
         - Model Deployment
-        - Version Control
+        - Version Control (Git)
         
-        **Tools**
+        **Tools & Frameworks**
         - TensorFlow, PyTorch
         - Scikit-learn, Pandas
-        - Git/GitHub
-        - Jupyter, VS Code
+        - Streamlit, Flask
+        - Plotly, Matplotlib
         
-        ### 🌱 Currently Learning
+        ### 🌱 Currently Exploring
         
         - MLOps & Production ML
-        - Advanced NLP (Transformers)
-        - Cloud Platforms (AWS)
-        - System Design for ML
         - Large Language Models
+        - Reinforcement Learning
+        - Cloud Platforms (AWS)
+        - Advanced NLP
+        - Quantitative Finance
         
-        ### 🎯 Career Objectives
+        ### 🏆 Key Achievements
         
-        **Immediate**
-        - Secure AI/ML internship
-        - Gain industry experience
-        
-        **Short-term**
-        - Build production systems
-        - Contribute to open source
-        
-        **Long-term**
-        - ML Engineer role
-        - Impactful AI applications
+        - 50+ ML projects completed
+        - 3 verified certifications
+        - Active GitHub contributor
+        - Strong academic record
+        - Multiple domain expertise
         """)
 
     st.markdown("---")
@@ -1176,11 +1152,12 @@ elif st.session_state.page == "About":
         st.markdown("""
         ### 🔨 Hands-On Builder
         
-        - 50+ complete projects across domains
+        - **50+ complete projects** across domains
         - End-to-end implementations
-        - Production-ready code
+        - Production-ready code quality
         - Comprehensive documentation
         - Real-world problem solving
+        - Continuous iteration and improvement
         """)
 
     with col2:
@@ -1192,6 +1169,7 @@ elif st.session_state.page == "About":
         - Regular research paper reading
         - Continuous skill development
         - Experimental mindset
+        - Knowledge sharing through documentation
         """)
 
     with col3:
@@ -1203,6 +1181,7 @@ elif st.session_state.page == "About":
         - Attention to detail
         - Quality-focused delivery
         - Adaptable to challenges
+        - Data-driven decision making
         """)
 
     st.markdown("---")
@@ -1215,21 +1194,26 @@ elif st.session_state.page == "About":
         st.markdown("""
         ### What I'm Seeking
         
-        **Position Type:**
+        **Position Types:**
         - AI/ML Engineering Intern
+        - Quantitative Research Intern
         - Data Science Intern
-        - ML Research Intern
-        - Applied AI Intern
+        - Financial ML Intern
+        - Applied AI Research Intern
         
-        **Duration:** 2-6 months (Flexible)
+        **Preferences:**
+        - **Duration:** 2-6 months (Flexible)
+        - **Mode:** Remote, Hybrid, or On-site
+        - **Start Date:** Immediate to Flexible
+        - **Commitment:** Full-time during internship
+        - **Location:** India (Open to relocation)
         
-        **Mode:** Remote, Hybrid, or On-site
-        
-        **Start Date:** Immediate to Flexible
-        
-        **Availability:** Full-time commitment during internship
-        
-        **Work Authorization:** Available for work in India
+        **Ideal Opportunity:**
+        - Work on real-world ML problems
+        - Learn from experienced professionals
+        - Contribute to production systems
+        - Exposure to industry best practices
+        - Collaborative team environment
         """)
 
     with col2:
@@ -1238,19 +1222,25 @@ elif st.session_state.page == "About":
         
         **Technical Skills:**
         - Strong Python & ML fundamentals
-        - Hands-on project experience
+        - 50+ hands-on project portfolio
+        - Financial AI & trading expertise
         - Quick learner & adaptable
-        - Good documentation practices
-        - Understanding of ML lifecycle
+        - Clean code & documentation
+        - Problem-solving abilities
         
-        **Soft Skills:**
-        - Excellent problem-solving abilities
-        - Strong written & verbal communication
+        **Professional Qualities:**
+        - Excellent communication skills
         - Collaborative team player
         - Self-motivated & proactive
+        - Strong work ethic
         - Eager to learn from experts
+        - Adaptable to new technologies
         
-        **Portfolio:** 50+ complete ML projects with real impact
+        **Proven Track Record:**
+        - Diverse project portfolio
+        - Academic excellence
+        - Continuous learning
+        - Community engagement
         """)
 
     st.markdown("---")
@@ -1258,16 +1248,34 @@ elif st.session_state.page == "About":
     st.markdown("""
     ## 🎓 Learning Philosophy
     
-    I believe in **continuous learning** and **practical application**. My approach involves:
+    My approach to continuous professional development is built on four pillars:
     
-    - **Understanding Fundamentals**: Deep dive into ML theory and mathematics
-    - **Hands-On Practice**: Building projects to solidify learning
-    - **Community Engagement**: Learning from and contributing to the ML community
-    - **Reading Research**: Staying updated with latest advancements
-    - **Teaching Others**: Documenting and sharing knowledge
+    **1. Structured Learning**
+    - Following well-designed courses from reputable institutions
+    - Ensuring comprehensive coverage of fundamentals
+    - Building strong theoretical foundation
+    - Verified certifications demonstrating expertise
+    
+    **2. Practical Application**
+    - Immediately applying concepts to real projects
+    - Reinforcing learning through hands-on implementation
+    - Building portfolio of working applications
+    - Iterating based on results and feedback
+    
+    **3. Community Engagement**
+    - Active participation in ML communities
+    - Learning from diverse perspectives
+    - Staying updated with industry trends
+    - Sharing knowledge and helping others
+    
+    **4. Research-Oriented**
+    - Regular reading of research papers
+    - Understanding cutting-edge developments
+    - Implementing novel approaches
+    - Staying ahead of the curve
     
     This philosophy has helped me grow from a curious beginner to a confident ML practitioner ready 
-    to contribute to professional projects and teams.
+    to contribute to professional projects and collaborate with experienced teams.
     """)
 
 # ==================== PROJECTS PAGE ====================
@@ -1277,16 +1285,14 @@ elif st.session_state.page == "Projects":
 
     st.markdown("""
     Comprehensive showcase of my AI/ML work spanning **50+ projects**. Featured below are my most significant 
-    projects that demonstrate end-to-end implementation, from problem definition to deployment, showcasing 
-    practical application of machine learning across healthcare, NLP, computer vision, and more.
+    projects demonstrating end-to-end implementation, from problem definition to deployment, across financial AI, 
+    healthcare, NLP, computer vision, and more.
     """)
 
-    # Project Overview Box
     st.info("""
-    **📌 Portfolio Overview:** I've completed 50+ projects spanning various domains of AI/ML. This page 
-    features 6 major projects that best represent my capabilities. The complete collection includes 
-    experimental projects, tutorials implementations, Kaggle competitions, hackathon submissions, and 
-    production-ready applications - all available on my [GitHub](https://github.com/dheeraj815).
+    **📌 Portfolio Overview:** I've completed 50+ projects across various AI/ML domains. This page features  
+    7 major projects that best represent my capabilities. The complete collection is available on my 
+    [GitHub](https://github.com/dheeraj815).
     """)
 
     st.markdown("---")
@@ -1347,7 +1353,7 @@ elif st.session_state.page == "Projects":
                 st.markdown(
                     f'<span class="badge">{tech}</span>', unsafe_allow_html=True)
 
-            st.markdown("### 📊 Metrics")
+            st.markdown("### 📊 Performance Metrics")
             for metric_name, metric_value in project['metrics'].items():
                 st.markdown(f"**{metric_name}:** `{metric_value}`")
 
@@ -1356,112 +1362,23 @@ elif st.session_state.page == "Projects":
     # Project Statistics
     st.markdown("## 📊 Project Statistics")
 
-    col1, col2, col3 = st.columns(3)
+    col1, col2, col3, col4 = st.columns(4)
 
     with col1:
         st.metric("Total Projects", "50+", "Across All Domains")
 
     with col2:
-        active_count = sum(1 for p in GITHUB_REPOS.values()
-                           if p['status'] == "Active")
         st.metric("Featured Projects", len(GITHUB_REPOS), "Highlighted Here")
 
     with col3:
+        active_count = sum(1 for p in GITHUB_REPOS.values()
+                           if p['status'] == "Active")
+        st.metric("Active Projects", active_count, "Ongoing Development")
+
+    with col4:
         tech_count = len(
             set([tech for proj in GITHUB_REPOS.values() for tech in proj['tech_stack']]))
-        st.metric("Technologies Used", "30+", "Diverse Stack")
-
-    st.markdown("---")
-
-    # Project Breakdown
-    st.markdown("## 📁 Complete Project Portfolio (50+ Projects)")
-
-    st.markdown("""
-    Beyond the featured projects above, my portfolio includes extensive work across multiple domains:
-    """)
-
-    col1, col2, col3 = st.columns(3)
-
-    with col1:
-        st.markdown("""
-        ### 🏥 Healthcare & Medical AI
-        - Medical diagnosis systems
-        - Health recommendation engines
-        - Clinical data analysis
-        - Medical image classification
-        - Patient prediction models
-        
-        **Count:** 10+ projects
-        """)
-
-    with col2:
-        st.markdown("""
-        ### 💬 NLP & Text Processing
-        - Chatbots & conversational AI
-        - Sentiment analysis systems
-        - Recommendation engines
-        - Text classification models
-        - Language processing tools
-        
-        **Count:** 15+ projects
-        """)
-
-    with col3:
-        st.markdown("""
-        ### 👁️ Computer Vision
-        - Image classification systems
-        - Object detection models
-        - Face recognition apps
-        - Pattern recognition systems
-        - Image processing projects
-        
-        **Count:** 12+ projects
-        """)
-
-    col1, col2, col3 = st.columns(3)
-
-    with col1:
-        st.markdown("""
-        ### 📊 Data Science & Analytics
-        - Predictive analytics models
-        - Time series forecasting
-        - Statistical analysis tools
-        - Visualization dashboards
-        - Business intelligence
-        
-        **Count:** 8+ projects
-        """)
-
-    with col2:
-        st.markdown("""
-        ### 🎮 Game AI & RL
-        - Game playing agents
-        - Strategy optimization
-        - Pattern learning systems
-        - Competitive AI models
-        - Simulation environments
-        
-        **Count:** 5+ projects
-        """)
-
-    with col3:
-        st.markdown("""
-        ### 🌐 Development & Deployment
-        - ML model deployment
-        - REST API development
-        - Full-stack applications
-        - Portfolio websites
-        - Interactive dashboards
-        
-        **Count:** 8+ projects
-        """)
-
-    st.info("""
-    **💡 Note:** The 6 featured projects above represent my most significant and well-documented work. 
-    My complete portfolio of 50+ projects includes experimental implementations, tutorial completions, 
-    Kaggle competitions, hackathon submissions, and various learning exercises - all available on 
-    [GitHub](https://github.com/dheeraj815).
-    """)
+        st.metric("Technologies", "35+", "Diverse Stack")
 
     st.markdown("---")
 
@@ -1473,18 +1390,22 @@ elif st.session_state.page == "Projects":
         for tech in project['tech_stack']:
             tech_counter[tech] = tech_counter.get(tech, 0) + 1
 
+    sorted_tech = sorted(tech_counter.items(),
+                         key=lambda x: x[1], reverse=True)
+
     fig = go.Figure(data=[
         go.Bar(
-            x=list(tech_counter.values()),
-            y=list(tech_counter.keys()),
+            x=[v for k, v in sorted_tech],
+            y=[k for k, v in sorted_tech],
             orientation='h',
             marker=dict(
-                color=list(tech_counter.values()),
+                color=[v for k, v in sorted_tech],
                 colorscale='Blues',
                 showscale=False
             ),
-            text=list(tech_counter.values()),
+            text=[v for k, v in sorted_tech],
             textposition='auto',
+            hovertemplate='<b>%{y}</b><br>Projects: %{x}<extra></extra>'
         )
     ])
 
@@ -1495,8 +1416,9 @@ elif st.session_state.page == "Projects":
         height=500,
         plot_bgcolor='rgba(0,0,0,0)',
         paper_bgcolor='rgba(0,0,0,0)',
-        font=dict(color='#d1d5db', family='Sora'),
-        showlegend=False
+        font=dict(color='#cbd5e1', family='Inter'),
+        showlegend=False,
+        margin=dict(l=10, r=10, t=40, b=10)
     )
 
     st.plotly_chart(fig, use_container_width=True,
@@ -1509,14 +1431,15 @@ elif st.session_state.page == "Skills":
 
     st.markdown("""
     Comprehensive overview of my technical capabilities, developed through academic coursework, personal 
-    projects, and continuous self-learning. Each skill area represents hands-on experience and practical application.
+    projects, professional certifications, and continuous self-learning. Each skill area represents hands-on 
+    experience and practical application.
     """)
 
     st.markdown("---")
 
-    # Skills Overview
+    # Skills Overview with Icons
     for skill_category, details in SKILLS.items():
-        st.markdown(f"## {skill_category}")
+        st.markdown(f"## {details['icon']} {skill_category}")
 
         col1, col2 = st.columns([3, 1])
 
@@ -1525,7 +1448,7 @@ elif st.session_state.page == "Skills":
                 f"**Proficiency Level:** {details['level']} ({details['proficiency']}%)")
             st.markdown(f"*{details['description']}*")
 
-            st.markdown("**Technologies:**")
+            st.markdown("**Technologies & Tools:**")
             skills_badges = " ".join(
                 [f'<span class="badge">{skill}</span>' for skill in details['skills']])
             st.markdown(skills_badges, unsafe_allow_html=True)
@@ -1536,17 +1459,21 @@ elif st.session_state.page == "Skills":
                 mode="gauge+number",
                 value=details['proficiency'],
                 domain={'x': [0, 1], 'y': [0, 1]},
-                title={'text': "Proficiency", 'font': {'color': '#d1d5db'}},
+                title={'text': "Proficiency", 'font': {
+                    'color': '#cbd5e1', 'size': 14}},
                 gauge={
-                    'axis': {'range': [0, 100], 'tickcolor': '#d1d5db'},
-                    'bar': {'color': "#2563eb"},
+                    'axis': {'range': [0, 100], 'tickcolor': '#cbd5e1'},
+                    'bar': {'color': "#3b82f6"},
                     'bgcolor': "rgba(0,0,0,0)",
                     'borderwidth': 2,
-                    'bordercolor': "#374151",
+                    'bordercolor': "#475569",
                     'steps': [
-                        {'range': [0, 50], 'color': 'rgba(37, 99, 235, 0.2)'},
-                        {'range': [50, 75], 'color': 'rgba(37, 99, 235, 0.3)'},
-                        {'range': [75, 100], 'color': 'rgba(37, 99, 235, 0.4)'}
+                        {'range': [0, 50],
+                            'color': 'rgba(59, 130, 246, 0.15)'},
+                        {'range': [50, 75],
+                            'color': 'rgba(59, 130, 246, 0.25)'},
+                        {'range': [75, 100],
+                            'color': 'rgba(59, 130, 246, 0.35)'}
                     ],
                 }
             ))
@@ -1556,7 +1483,7 @@ elif st.session_state.page == "Skills":
                 margin=dict(l=20, r=20, t=40, b=20),
                 plot_bgcolor='rgba(0,0,0,0)',
                 paper_bgcolor='rgba(0,0,0,0)',
-                font=dict(color='#d1d5db', family='Sora', size=12)
+                font=dict(color='#cbd5e1', family='Inter', size=12)
             )
 
             st.plotly_chart(fig, use_container_width=True,
@@ -1564,7 +1491,7 @@ elif st.session_state.page == "Skills":
 
         st.markdown("---")
 
-    # Overall Proficiency Radar Chart
+    # Overall Skills Radar Chart
     st.markdown("## 📊 Skills Proficiency Overview")
 
     categories = list(SKILLS.keys())
@@ -1577,8 +1504,8 @@ elif st.session_state.page == "Skills":
         theta=categories,
         fill='toself',
         name='Proficiency',
-        fillcolor='rgba(37, 99, 235, 0.3)',
-        line=dict(color='#2563eb', width=2)
+        fillcolor='rgba(59, 130, 246, 0.25)',
+        line=dict(color='#3b82f6', width=3)
     ))
 
     fig.update_layout(
@@ -1586,12 +1513,12 @@ elif st.session_state.page == "Skills":
             radialaxis=dict(
                 visible=True,
                 range=[0, 100],
-                gridcolor='#374151',
-                tickfont=dict(color='#d1d5db')
+                gridcolor='#475569',
+                tickfont=dict(color='#cbd5e1', size=10)
             ),
             angularaxis=dict(
-                gridcolor='#374151',
-                tickfont=dict(color='#d1d5db', size=11)
+                gridcolor='#475569',
+                tickfont=dict(color='#cbd5e1', size=11)
             ),
             bgcolor='rgba(0,0,0,0)'
         ),
@@ -1599,14 +1526,14 @@ elif st.session_state.page == "Skills":
         height=600,
         plot_bgcolor='rgba(0,0,0,0)',
         paper_bgcolor='rgba(0,0,0,0)',
-        font=dict(color='#d1d5db', family='Sora')
+        font=dict(color='#cbd5e1', family='Inter')
     )
 
     st.plotly_chart(fig, use_container_width=True, key="skills_radar_chart")
 
     st.markdown("---")
 
-    # Soft Skills
+    # Professional Competencies
     st.markdown("## 🤝 Professional Competencies")
 
     col1, col2 = st.columns(2)
@@ -1615,30 +1542,66 @@ elif st.session_state.page == "Skills":
         st.markdown("""
         ### Technical Competencies
         
-        - **Problem Solving**: Analytical thinking and systematic approach to complex challenges
-        - **Quick Learning**: Rapidly acquire and apply new technologies and frameworks
-        - **Research Skills**: Comfortable reading and implementing research papers
-        - **Code Quality**: Focus on clean, maintainable, and well-documented code
-        - **Debugging**: Systematic approach to identifying and resolving issues
-        - **Testing**: Understanding of unit testing and validation practices
+        **Problem Solving**
+        - Analytical thinking and systematic approach
+        - Breaking down complex challenges
+        - Creative solution design
+        
+        **Quick Learning**
+        - Rapidly acquire new technologies
+        - Adapt to changing requirements
+        - Self-directed learning
+        
+        **Research Skills**
+        - Reading and implementing papers
+        - Understanding cutting-edge techniques
+        - Experimental validation
+        
+        **Code Quality**
+        - Clean, maintainable code
+        - Comprehensive documentation
+        - Best practices adherence
+        
+        **Testing & Debugging**
+        - Systematic issue identification
+        - Unit testing and validation
+        - Performance optimization
         """)
 
     with col2:
         st.markdown("""
         ### Collaboration & Communication
         
-        - **Team Collaboration**: Experience in academic group projects and coding communities
-        - **Technical Communication**: Ability to explain complex concepts clearly
-        - **Documentation**: Comprehensive project documentation and README files
-        - **Adaptability**: Flexible in learning new tools and methodologies
-        - **Time Management**: Balancing academics, projects, and continuous learning
-        - **Self-Motivation**: Proactive in seeking knowledge and completing projects
+        **Team Collaboration**
+        - Group project experience
+        - Coding community engagement
+        - Knowledge sharing
+        
+        **Technical Communication**
+        - Explaining complex concepts clearly
+        - Documentation and presentations
+        - Code reviews and feedback
+        
+        **Adaptability**
+        - Learning new tools quickly
+        - Flexible to different methodologies
+        - Open to feedback
+        
+        **Time Management**
+        - Balancing multiple projects
+        - Meeting deadlines consistently
+        - Prioritizing effectively
+        
+        **Self-Motivation**
+        - Proactive learning
+        - Independent project completion
+        - Continuous improvement mindset
         """)
 
     st.markdown("---")
 
     # Learning Resources
-    st.markdown("## 📚 Continuous Learning")
+    st.markdown("## 📚 Continuous Learning Ecosystem")
 
     col1, col2, col3 = st.columns(3)
 
@@ -1646,36 +1609,42 @@ elif st.session_state.page == "Skills":
         st.markdown("""
         ### Online Platforms
         
-        - Coursera (Specializations)
-        - DataCamp (Data Science)
-        - Kaggle (Competitions)
-        - YouTube (Tutorials)
-        - Fast.ai (Deep Learning)
-        - Google Codelabs
+        - **Coursera** - Specializations
+        - **DataCamp** - Data Science
+        - **Kaggle** - Competitions & Learn
+        - **YouTube** - Technical Tutorials
+        - **Fast.ai** - Practical Deep Learning
+        - **QuantInsti** - Algorithmic Trading
+        - **Udacity** - Nanodegrees
+        - **edX** - University Courses
         """)
 
     with col2:
         st.markdown("""
         ### Reading & Research
         
-        - arXiv (Research Papers)
-        - Medium/Towards Data Science
-        - Official Documentation
-        - Technical Blogs
-        - ML Conference Papers
-        - GitHub Repositories
+        - **arXiv** - Research Papers
+        - **Medium** - Technical Blogs
+        - **Towards Data Science** - Tutorials
+        - **Official Documentation**
+        - **ML Conference Papers**
+        - **Tech Company Blogs**
+        - **Quantitative Finance Journals**
+        - **GitHub Trending**
         """)
 
     with col3:
         st.markdown("""
         ### Community Engagement
         
-        - Stack Overflow
-        - Reddit ML Communities
-        - Discord Servers
-        - LinkedIn Groups
-        - GitHub Discussions
-        - Coding Forums
+        - **Stack Overflow** - Q&A
+        - **Reddit** - r/MachineLearning
+        - **Discord** - ML Communities
+        - **LinkedIn** - Professional Groups
+        - **GitHub** - Discussions
+        - **Kaggle** - Competitions
+        - **Twitter** - ML Researchers
+        - **Local Meetups**
         """)
 
 # ==================== EDUCATION PAGE ====================
@@ -1685,13 +1654,13 @@ elif st.session_state.page == "Education":
 
     st.markdown("""
     My academic journey in AI/ML, combining rigorous coursework with hands-on project experience and 
-    continuous skill development through certifications and self-learning.
+    continuous skill development through certifications and self-directed learning.
     """)
 
     st.markdown("---")
 
     # Main Education
-    st.markdown(f"## {EDUCATION['degree']}")
+    st.markdown(f"## 🎓 {EDUCATION['degree']}")
 
     col1, col2 = st.columns([2, 1])
 
@@ -1701,32 +1670,42 @@ elif st.session_state.page == "Education":
         st.markdown(f"**Current Status:** {EDUCATION['status']}")
         st.markdown(f"**Academic Performance:** {EDUCATION['gpa']}")
 
+        st.markdown("### 📚 Relevant Coursework")
+
+        col_a, col_b = st.columns(2)
+
+        mid_point = len(EDUCATION['coursework']) // 2
+
+        with col_a:
+            for course in EDUCATION['coursework'][:mid_point]:
+                st.markdown(f"- {course}")
+
+        with col_b:
+            for course in EDUCATION['coursework'][mid_point:]:
+                st.markdown(f"- {course}")
+
     with col2:
         st.markdown("""
-        <div style='padding: 1.5rem; background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(124, 58, 237, 0.15)); border-radius: 0.75rem; border: 1px solid var(--border);'>
-            <h4 style='color: var(--text-primary); margin-bottom: 1rem; font-size: 1.15rem !important;'>🎯 Academic Highlights</h4>
-            <p style='color: var(--text-secondary); font-size: 0.9rem; line-height: 1.6;'>
-                ✓ Strong foundation in AI/ML<br>
-                ✓ 6+ major projects completed<br>
-                ✓ Active coding community member<br>
-                ✓ Consistent academic excellence
+        <div class='info-card'>
+            <h4 style='color: var(--text-primary); margin-bottom: 1rem; font-size: 1.125rem !important;'>🎯 Academic Highlights</h4>
+            <p style='color: var(--text-secondary); font-size: 0.9rem; line-height: 1.8;'>
+                ✓ Strong AI/ML foundation<br>
+                ✓ 50+ projects completed<br>
+                ✓ Active in coding communities<br>
+                ✓ Consistent academic excellence<br>
+                ✓ 3 professional certifications<br>
+                ✓ Research paper implementations
             </p>
         </div>
         """, unsafe_allow_html=True)
 
-    st.markdown("### 📚 Relevant Coursework")
+    st.markdown("---")
 
-    col1, col2 = st.columns(2)
+    # Academic Achievements
+    st.markdown("## 🏆 Academic Achievements")
 
-    mid_point = len(EDUCATION['coursework']) // 2
-
-    with col1:
-        for course in EDUCATION['coursework'][:mid_point]:
-            st.markdown(f"- {course}")
-
-    with col2:
-        for course in EDUCATION['coursework'][mid_point:]:
-            st.markdown(f"- {course}")
+    for achievement in EDUCATION['achievements']:
+        st.markdown(f"- {achievement}")
 
     st.markdown("---")
 
@@ -1735,32 +1714,32 @@ elif st.session_state.page == "Education":
 
     academic_projects = [
         {
-            "title": "Medical Image Classification System",
-            "course": "Deep Learning Lab",
-            "description": "CNN-based system for chest X-ray analysis",
-            "tech": "TensorFlow, OpenCV, ResNet50",
-            "outcome": "89% validation accuracy"
+            "title": "AI-Powered Trading Bot",
+            "course": "Financial AI & Machine Learning Lab",
+            "description": "Ensemble ML-based algorithmic trading system with real-time market signals",
+            "tech": "Python, Scikit-learn, yfinance, TA-Lib, Streamlit",
+            "outcome": "72% validation accuracy, comprehensive backtesting framework"
         },
         {
-            "title": "Sentiment Analysis System",
+            "title": "Medical Diagnosis System",
+            "course": "Healthcare AI Applications",
+            "description": "ML-powered symptom-based disease prediction with NLP interface",
+            "tech": "TensorFlow, NLP, Ensemble Methods",
+            "outcome": "87% prediction accuracy across 100+ diseases"
+        },
+        {
+            "title": "Deep Learning Image Classifier",
+            "course": "Computer Vision & Deep Learning",
+            "description": "CNN-based image classification with transfer learning",
+            "tech": "PyTorch, ResNet50, OpenCV, Data Augmentation",
+            "outcome": "89% validation accuracy on custom dataset"
+        },
+        {
+            "title": "NLP Sentiment Analyzer",
             "course": "Natural Language Processing",
-            "description": "Transformer-based sentiment classifier",
-            "tech": "BERT, PyTorch, NLTK",
-            "outcome": "91% test accuracy"
-        },
-        {
-            "title": "Face Recognition Attendance",
-            "course": "Computer Vision",
-            "description": "Automated attendance system",
-            "tech": "OpenCV, face_recognition, SQLite",
-            "outcome": "95% recognition accuracy"
-        },
-        {
-            "title": "Stock Price Prediction",
-            "course": "ML Applications",
-            "description": "LSTM-based time series forecasting",
-            "tech": "PyTorch, yfinance, Technical Indicators",
-            "outcome": "65% directional accuracy"
+            "description": "Transformer-based sentiment classification system",
+            "tech": "BERT, PyTorch, NLTK, Web Scraping",
+            "outcome": "91% test accuracy, real-time inference"
         }
     ]
 
@@ -1787,18 +1766,22 @@ elif st.session_state.page == "Education":
         - Database Management
         - Operating Systems
         - Computer Networks
+        - Object-Oriented Programming
+        - System Design
         """)
 
     with col2:
         st.markdown("""
         ### ML/AI Expertise
         
-        - ML Algorithms & Theory
+        - Machine Learning Theory
         - Deep Learning Architectures
         - Computer Vision Techniques
-        - NLP & Text Processing
+        - Natural Language Processing
         - Model Optimization
         - Statistical Methods
+        - Feature Engineering
+        - Model Evaluation
         """)
 
     with col3:
@@ -1811,48 +1794,9 @@ elif st.session_state.page == "Education":
         - Team Collaboration
         - Presentation Skills
         - Critical Thinking
+        - Problem Solving
+        - Communication
         """)
-
-    st.markdown("---")
-
-    # Timeline Visualization
-    st.markdown("## 📈 Academic Timeline")
-
-    timeline_data = pd.DataFrame({
-        'Year': ['2024', '2025', '2026', '2027'],
-        'Semester': ['Sem 1-2', 'Sem 3-4', 'Sem 5-6', 'Sem 7-8'],
-        'Focus': ['Foundations', 'Core ML/AI', 'Advanced Topics', 'Specialization'],
-        'Projects': [2, 3, 5, 8]
-    })
-
-    fig = go.Figure()
-
-    fig.add_trace(go.Scatter(
-        x=timeline_data['Year'],
-        y=timeline_data['Projects'],
-        mode='lines+markers+text',
-        name='Projects Completed',
-        line=dict(color='#2563eb', width=3),
-        marker=dict(size=12, color='#2563eb',
-                    line=dict(color='white', width=2)),
-        text=timeline_data['Focus'],
-        textposition='top center',
-        textfont=dict(color='#d1d5db', size=12)
-    ))
-
-    fig.update_layout(
-        title='Project Growth Throughout Academic Journey',
-        xaxis_title='Academic Year',
-        yaxis_title='Cumulative Projects',
-        height=400,
-        plot_bgcolor='rgba(0,0,0,0)',
-        paper_bgcolor='rgba(0,0,0,0)',
-        font=dict(color='#d1d5db', family='Sora'),
-        hovermode='x unified'
-    )
-
-    st.plotly_chart(fig, use_container_width=True,
-                    key="education_timeline_chart")
 
 # ==================== CERTIFICATIONS PAGE ====================
 elif st.session_state.page == "Certifications":
@@ -1861,7 +1805,7 @@ elif st.session_state.page == "Certifications":
 
     st.markdown("""
     Beyond academic education, I've pursued professional certifications to deepen expertise and stay 
-    current with industry practices and emerging technologies.
+    current with industry practices, emerging technologies, and best practices in AI/ML.
     """)
 
     st.markdown("---")
@@ -1874,17 +1818,17 @@ elif st.session_state.page == "Certifications":
     with col2:
         st.metric("Completed", len(CERTIFICATIONS), "Verified")
     with col3:
-        st.metric("Platforms Used", "3", "Coursera, DataCamp")
+        st.metric("Platforms", "2", "Coursera, DataCamp")
     with col4:
         st.metric("Learning Hours", "500+", "Documented")
 
     st.markdown("---")
 
-    # Display All Completed Certifications
+    # Display Certifications
     st.markdown("## ✅ Professional Certifications")
 
     for cert in CERTIFICATIONS:
-        st.markdown(f"### {cert['name']}")
+        st.markdown(f"### 📜 {cert['name']}")
 
         col1, col2 = st.columns([2, 1])
 
@@ -1900,15 +1844,13 @@ elif st.session_state.page == "Certifications":
 
         with col2:
             st.markdown(f"""
-            <div style='padding: 1.5rem; background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(6, 182, 212, 0.15)); border-radius: 0.75rem; border: 1px solid rgba(16, 185, 129, 0.3);'>
-                <p style='color: var(--success); font-weight: 600; margin-bottom: 0.5rem;'>✓ {cert['status']}</p>
-                <p style='color: var(--text-secondary); font-size: 0.875rem;'>{cert['credential']}</p>
+            <div class='info-card' style='background: linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(6, 182, 212, 0.1)); border-color: rgba(16, 185, 129, 0.3);'>
+                <p style='color: var(--success); font-weight: 600; margin-bottom: 0.5rem; font-size: 1rem !important;'>✓ {cert['status']}</p>
+                <p style='color: var(--text-secondary); font-size: 0.875rem !important;'>{cert['credential']}</p>
             </div>
             """, unsafe_allow_html=True)
 
         st.markdown("---")
-
-    st.markdown("---")
 
     # Learning Platforms
     st.markdown("## 📚 Continuous Learning Ecosystem")
@@ -1919,17 +1861,18 @@ elif st.session_state.page == "Certifications":
         st.markdown("""
         ### Online Platforms
         
-        **Primary Platforms:**
-        - Coursera (Specializations from top universities)
-        - DataCamp (Interactive data science tracks)
-        - Kaggle Learn (Hands-on ML tutorials)
-        - YouTube (Technical content creators)
+        **Primary Learning:**
+        - Coursera (Stanford, deeplearning.ai)
+        - DataCamp (Interactive courses)
+        - Kaggle Learn (Hands-on tutorials)
+        - YouTube (Technical content)
         
         **Supplementary:**
         - Fast.ai (Practical deep learning)
-        - Google Codelabs (TensorFlow guides)
-        - Udacity (Nanodegree programs)
+        - Google Codelabs (TensorFlow)
+        - Udacity (Nanodegrees)
         - edX (University courses)
+        - QuantInsti (Algo trading)
         """)
 
     with col2:
@@ -1937,16 +1880,17 @@ elif st.session_state.page == "Certifications":
         ### Reading & Research
         
         **Technical Resources:**
-        - arXiv (Latest ML research papers)
+        - arXiv (Latest ML research)
         - Medium/Towards Data Science
-        - Official framework documentation
-        - Technical blogs from industry
+        - Official documentation
+        - Technical blogs
         
         **Industry Insights:**
-        - ML conference papers (NeurIPS, ICML)
-        - GitHub trending repositories
-        - Tech company engineering blogs
+        - ML conference papers
+        - GitHub trending repos
+        - Tech company blogs
         - AI research lab publications
+        - Academic journals
         """)
 
     with col3:
@@ -1964,25 +1908,35 @@ elif st.session_state.page == "Certifications":
         - Kaggle competitions
         - Open source contributions
         - Peer study groups
+        - Local meetups
         """)
 
     st.markdown("---")
 
     # Learning Philosophy
     st.markdown("""
-    ## 🎯 Learning Philosophy
+    ## 🎓 Learning Philosophy
     
-    My approach to continuous professional development:
+    My approach to continuous professional development is based on four key principles:
     
-    **Structured Learning:** Following well-designed courses from reputable institutions ensures comprehensive coverage of topics and strong theoretical foundation.
+    ### 1. Structured Learning
+    Following well-designed courses from reputable institutions ensures comprehensive topic coverage and 
+    builds a strong theoretical foundation. Verified certifications demonstrate commitment and expertise.
     
-    **Practical Application:** Every certification is immediately applied to personal projects, reinforcing learning through hands-on implementation.
+    ### 2. Practical Application
+    Every certification is immediately applied to personal projects, reinforcing learning through hands-on 
+    implementation and building a portfolio of working applications.
     
-    **Community Learning:** Active participation in ML communities provides diverse perspectives and keeps me updated with industry trends and best practices.
+    ### 3. Community Learning
+    Active participation in ML communities provides diverse perspectives, keeps me updated with industry 
+    trends, and allows knowledge sharing with peers.
     
-    **Research-Oriented:** Regular reading of research papers helps understand cutting-edge developments and inspires new project ideas.
+    ### 4. Research-Oriented
+    Regular reading of research papers helps understand cutting-edge developments, inspires new project 
+    ideas, and maintains awareness of the field's evolution.
     
-    **Documentation:** Maintaining detailed notes and documenting learnings helps reinforce concepts and provides reference for future projects.
+    This philosophy has enabled continuous growth from foundational knowledge to advanced expertise, 
+    preparing me for professional contributions and collaborative projects.
     """)
 
 # ==================== CONTACT PAGE ====================
@@ -1992,7 +1946,7 @@ elif st.session_state.page == "Contact":
 
     st.markdown("""
     I'm actively seeking **AI/ML internship opportunities** and always open to connecting with fellow 
-    developers, researchers, and professionals. Let's build something amazing together!
+    developers, researchers, and professionals. Let's collaborate and build innovative AI solutions together!
     """)
 
     st.markdown("---")
@@ -2004,10 +1958,10 @@ elif st.session_state.page == "Contact":
 
     with col1:
         st.markdown("""
-        <div style='text-align: center; padding: 2rem; background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(124, 58, 237, 0.15)); border-radius: 0.75rem; border: 1px solid var(--border);'>
+        <div class='info-card' style='text-align: center; padding: 2rem;'>
             <div style='font-size: 3rem; margin-bottom: 1rem;'>📧</div>
-            <h3 style='color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.25rem !important;'>Email</h3>
-            <p style='color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;'>
+            <h3 style='color: var(--text-primary); margin-bottom: 0.75rem; font-size: 1.25rem !important;'>Email</h3>
+            <p style='color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem; word-break: break-all;'>
                 dheerajmuley006@gmail.com
             </p>
             <p style='color: var(--text-muted); font-size: 0.8rem;'>Response within 24 hours</p>
@@ -2020,9 +1974,9 @@ elif st.session_state.page == "Contact":
 
     with col2:
         st.markdown("""
-        <div style='text-align: center; padding: 2rem; background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(124, 58, 237, 0.15)); border-radius: 0.75rem; border: 1px solid var(--border);'>
+        <div class='info-card' style='text-align: center; padding: 2rem;'>
             <div style='font-size: 3rem; margin-bottom: 1rem;'>💼</div>
-            <h3 style='color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.25rem !important;'>LinkedIn</h3>
+            <h3 style='color: var(--text-primary); margin-bottom: 0.75rem; font-size: 1.25rem !important;'>LinkedIn</h3>
             <p style='color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;'>
                 linkedin.com/in/dheeraj-muley
             </p>
@@ -2036,13 +1990,13 @@ elif st.session_state.page == "Contact":
 
     with col3:
         st.markdown("""
-        <div style='text-align: center; padding: 2rem; background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(124, 58, 237, 0.15)); border-radius: 0.75rem; border: 1px solid var(--border);'>
+        <div class='info-card' style='text-align: center; padding: 2rem;'>
             <div style='font-size: 3rem; margin-bottom: 1rem;'>💻</div>
-            <h3 style='color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.25rem !important;'>GitHub</h3>
+            <h3 style='color: var(--text-primary); margin-bottom: 0.75rem; font-size: 1.25rem !important;'>GitHub</h3>
             <p style='color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;'>
                 github.com/dheeraj815
             </p>
-            <p style='color: var(--text-muted); font-size: 0.8rem;'>Code portfolio</p>
+            <p style='color: var(--text-muted); font-size: 0.8rem;'>Code portfolio & projects</p>
         </div>
         """, unsafe_allow_html=True)
 
@@ -2062,20 +2016,26 @@ elif st.session_state.page == "Contact":
         
         **Position Types:**
         - AI/ML Engineering Intern
+        - Quantitative Research Intern
         - Data Science Intern
-        - Machine Learning Research Intern
-        - Applied AI Intern
-        - Deep Learning Intern
+        - Financial ML Intern
+        - Applied AI Research Intern
+        - MLOps Engineering Intern
         
-        **Preferred Duration:** 2-6 months (Flexible)
+        **Preferences:**
+        - **Duration:** 2-6 months (Flexible)
+        - **Work Mode:** Remote, Hybrid, or On-site
+        - **Start Date:** Immediate to within 2-3 months
+        - **Commitment:** Full-time during internship
+        - **Location:** India (Open to relocation)
         
-        **Work Mode:** Remote, Hybrid, or On-site
-        
-        **Start Date:** Immediate to Flexible (within 2-3 months)
-        
-        **Availability:** Full-time commitment during internship period
-        
-        **Location:** Available for work in India; Open to relocation for right opportunity
+        **Ideal Environment:**
+        - Work on real-world ML challenges
+        - Learn from experienced professionals
+        - Contribute to production systems
+        - Exposure to industry best practices
+        - Collaborative and innovative team
+        - Mentorship and growth opportunities
         """)
 
     with col2:
@@ -2083,24 +2043,27 @@ elif st.session_state.page == "Contact":
         ### What I Bring
         
         **Technical Capabilities:**
-        - Strong Python programming & ML fundamentals
-        - 6+ complete end-to-end ML projects
-        - Experience with TensorFlow, PyTorch, Scikit-learn
-        - Web development & model deployment skills
-        - Understanding of ML lifecycle and best practices
+        - Strong Python & ML fundamentals
+        - 50+ hands-on project portfolio
+        - Financial AI & trading experience
+        - TensorFlow, PyTorch, Scikit-learn
+        - Web development & deployment
+        - Clean code & documentation
         
         **Professional Qualities:**
-        - Excellent analytical & problem-solving skills
-        - Strong written & verbal communication
-        - Collaborative team player with leadership potential
-        - Self-motivated with strong work ethic
-        - Quick learner adaptable to new technologies
-        - Attention to detail & quality-focused
+        - Excellent problem-solving skills
+        - Strong communication abilities
+        - Collaborative team player
+        - Self-motivated & proactive
+        - Quick learner & adaptable
+        - Detail-oriented approach
         
-        **Portfolio:** View my work at [github.com/dheeraj815](https://github.com/dheeraj815)
-        
-        **50+ Projects Completed** across diverse domains including healthcare AI, NLP, computer vision, 
-        recommendation systems, predictive analytics, and more.
+        **Proven Track Record:**
+        - Diverse project portfolio
+        - Academic excellence
+        - Professional certifications
+        - Active community engagement
+        - Continuous learning mindset
         """)
 
     st.markdown("---")
@@ -2114,33 +2077,35 @@ elif st.session_state.page == "Contact":
     **Best Method:** Email (dheerajmuley006@gmail.com)
     
     **Please Include:**
-    - Company/Organization name and background
-    - Position details and responsibilities
+    - Company/Organization name and overview
+    - Position details and key responsibilities
     - Duration and expected timeline
-    - Key technical requirements
-    - Any specific projects or domains
+    - Technical requirements and tech stack
+    - Team structure and mentorship approach
+    - Any specific projects or focus areas
     
     **What You'll Receive:**
     - Response within 24 hours
     - Updated resume and portfolio
     - Relevant project links and code samples
-    - Availability and interview scheduling
+    - Availability and scheduling flexibility
+    - References if requested
     
     ### For Collaboration & Networking
     
-    **LinkedIn:** Perfect for professional networking and staying connected
+    **LinkedIn:** Best for professional networking and industry connections
     
-    **GitHub:** For technical discussions, code reviews, and collaborations
+    **GitHub:** Technical discussions, code reviews, and project collaborations
     
-    **Email:** For general inquiries, learning resources sharing, or project discussions
+    **Email:** General inquiries, resource sharing, or detailed discussions
     
     ### Response Times
     
     - **Email:** Within 24 hours (typically same day)
     - **LinkedIn:** Within 48 hours
-    - **GitHub Issues:** Same day for urgent technical matters
+    - **GitHub Issues:** Same day for technical matters
     
-    **Best Time to Contact:** Anytime! I check messages regularly throughout the day (IST timezone: GMT+5:30)
+    **Time Zone:** IST (GMT+5:30) - Available throughout the day
     """)
 
     st.markdown("---")
@@ -2158,13 +2123,17 @@ elif st.session_state.page == "Contact":
         
         **Time Zone:** IST (GMT+5:30)
         
-        **Languages:** English (Fluent), Hindi (Native)
-        
-        **Willing to Relocate:** Yes, for the right opportunity
+        **Languages:**
+        - English (Fluent)
+        - Hindi (Native)
         
         **Work Authorization:** Available for work in India
         
-        **Notice Period:** Immediate (for internships)
+        **Willing to Relocate:** Yes, for the right opportunity
+        
+        **Notice Period:** Immediate availability for internships
+        
+        **Availability:** Full-time commitment during internship period
         """)
 
     with col2:
@@ -2182,7 +2151,13 @@ elif st.session_state.page == "Contact":
         - Detail-oriented
         - Self-motivated
         - Continuous learner
-        - Team player
+        - Strong team player
+        
+        **Values:**
+        - Quality over quantity
+        - Continuous improvement
+        - Knowledge sharing
+        - Ethical AI practices
         """)
 
     st.markdown("---")
@@ -2191,7 +2166,7 @@ elif st.session_state.page == "Contact":
     st.success("""
     💡 **Thank you for visiting my portfolio!** I'm excited about opportunities to contribute to innovative 
     AI/ML projects and learn from experienced professionals. Whether it's an internship opportunity, 
-    collaboration proposal, or just a technical discussion, I'd love to hear from you!
+    collaboration proposal, or technical discussion, I'd love to hear from you!
     """)
 
     # Quick Actions
@@ -2203,24 +2178,24 @@ elif st.session_state.page == "Contact":
                 "Please email me at dheerajmuley006@gmail.com to request my latest resume and additional materials.")
 
     with col2:
-        if st.button("💼 View Projects", use_container_width=True):
+        if st.button("💼 View All Projects", use_container_width=True):
             st.session_state.page = "Projects"
             st.rerun()
 
     with col3:
-        if st.button("🎓 Check Credentials", use_container_width=True):
+        if st.button("🎓 View Credentials", use_container_width=True):
             st.session_state.page = "Certifications"
             st.rerun()
 
 # Footer
 st.markdown("---")
 st.markdown("""
-<div style='text-align: center; padding: 2rem 0; color: var(--text-muted);'>
-    <p style='font-size: 0.9rem; margin-bottom: 0.5rem;'>
-        Built with passion using <strong>Streamlit</strong> and <strong>Python</strong>
+<div style='text-align: center; padding: 2.5rem 0; color: var(--text-muted);'>
+    <p style='font-size: 0.9rem; margin-bottom: 0.75rem; color: var(--text-secondary);'>
+        Built with <strong style='color: var(--primary);'>Streamlit</strong> and <strong style='color: var(--primary);'>Python</strong>
     </p>
     <p style='font-size: 0.875rem; margin-bottom: 1rem;'>
-        © 2026 Dheeraj Muley | Last Updated: January 2026
+        © 2026 Dheeraj Muley • Last Updated: February 2026
     </p>
     <p style='font-size: 0.875rem;'>
         <a href='https://github.com/dheeraj815' target='_blank'>GitHub</a> • 
