@@ -19,7 +19,7 @@ A modern, interactive portfolio built with Streamlit showcasing AI/ML projects a
 
 ## 🚀 Live Demo
 
-[View Live Portfolio](your-streamlit-url-here)
+https://dheerajmuley.netlify.app
 
 ## 💻 Local Setup
 ```bash
@@ -43,5 +43,6 @@ streamlit run app.py
 - LinkedIn: [Dheeraj Muley](https://www.linkedin.com/in/dheeraj-muley)
 
 ## 📝 License
+
 
 MIT License - feel free to use this for your own portfolio!
