@@ -38,11 +38,12 @@ streamlit run app.py
 
 ## 📧 Contact
 
-- Email: dheerajmuley006@gmail.com
-- GitHub: [@dheeraj815](https://github.com/dheeraj815)
-- LinkedIn: [Dheeraj Muley](https://www.linkedin.com/in/dheeraj-muley)
+- ✉️ Email    : dheerajmuley006@gmail.com
+- 🐙 GitHub   : https://github.com/dheeraj815
+- 💼 LinkedIn : https://www.linkedin.com/in/dheeraj-muley
 
 ## 📝 License
 
 
 MIT License - feel free to use this for your own portfolio!
+
